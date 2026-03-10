@@ -54,7 +54,7 @@ export default function ServicesPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-brand-black">
+      <section className="relative pt-32 pb-20 bg-white dark:bg-brand-black">
         <div className="absolute inset-0 opacity-10">
           <Image src="/images/hero.png" alt="Construction services" fill className="object-cover" />
         </div>
@@ -62,16 +62,16 @@ export default function ServicesPageClient() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">Our Services</span>
-            <h1 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6">
               Comprehensive <span className="gradient-text">Construction Services</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">From concept to completion — we offer a full range of construction services tailored to your specific needs.</p>
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">From concept to completion — we offer a full range of construction services tailored to your specific needs.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-24 bg-brand-dark text-white">
+      <section className="py-24 bg-gray-50 dark:bg-brand-dark text-brand-black dark:text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
           {services.map((service, i) => (
             <motion.div key={service.title} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
@@ -80,15 +80,15 @@ export default function ServicesPageClient() {
                   <service.icon size={28} className="text-brand-yellow" />
                 </div>
                 <h2 className="text-3xl font-bold font-[family-name:var(--font-heading)] mb-4">{service.title}</h2>
-                <p className="text-gray-400 font-medium leading-relaxed mb-6">{service.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6">{service.desc}</p>
                 <ul className="space-y-3 mb-8">
                   {service.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-3 text-gray-300 font-semibold text-sm">
+                    <li key={b} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 font-semibold text-sm">
                       <CheckCircle2 size={16} className="text-brand-yellow shrink-0" /> {b}
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-6 py-3 rounded-full font-bold hover:bg-brand-black transition-all hover:scale-105">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-brand-black dark:text-white px-6 py-3 rounded-full font-bold hover:bg-white dark:bg-brand-black transition-all hover:scale-105">
                   Get a Quote <ArrowRight size={16} />
                 </Link>
               </div>
@@ -107,9 +107,9 @@ export default function ServicesPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">Need a Custom Construction Solution?</h2>
-            <p className="text-gray-400/80 font-medium text-lg mb-8">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6">Need a Custom Construction Solution?</h2>
+            <p className="text-gray-600 dark:text-gray-400/80 font-medium text-lg mb-8">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-white dark:bg-brand-black text-brand-black dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:bg-white/5 transition-all hover:scale-105">
               Contact Us <ArrowRight size={20} />
             </Link>
           </motion.div>

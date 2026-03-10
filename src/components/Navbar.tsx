@@ -45,7 +45,7 @@ export default function Navbar() {
             <Image src="/images/logo.png" alt="SUBH Construction Logo" width={45} height={45} className="rounded" />
             <div>
               <span className="text-xl font-bold font-[family-name:var(--font-heading)] text-brand-yellow">SUBH</span>
-              <span className="text-xl font-bold font-[family-name:var(--font-heading)] text-white ml-1">Construction</span>
+              <span className="text-xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white ml-1">Construction</span>
             </div>
           </Link>
 
@@ -55,7 +55,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-brand-yellow transition-colors duration-200 rounded-lg hover:bg-white/5"
+                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-yellow transition-colors duration-200 rounded-lg hover:bg-gray-100 dark:bg-white/5"
               >
                 {link.label}
               </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-400 hover:text-brand-yellow hover:bg-white/5 transition-all"
+              className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:text-brand-yellow hover:bg-gray-100 dark:bg-white/5 transition-all"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
@@ -84,14 +84,14 @@ export default function Navbar() {
           <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-400 hover:text-brand-yellow transition-all"
+              className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:text-brand-yellow transition-all"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white"
+              className="p-2 text-brand-black dark:text-white"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -107,7 +107,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-brand-black/98 backdrop-blur-xl border-t border-white/10"
+            className="lg:hidden bg-brand-black/98 backdrop-blur-xl border-t border-gray-200 dark:border-white/10"
           >
             <div className="px-4 py-6 space-y-1">
               {navLinks.map((link, i) => (
@@ -120,7 +120,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-gray-300 hover:text-brand-yellow hover:bg-white/5 rounded-lg transition-all font-medium"
+                    className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-brand-yellow hover:bg-gray-100 dark:bg-white/5 rounded-lg transition-all font-medium"
                   >
                     {link.label}
                   </Link>

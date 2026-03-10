@@ -29,7 +29,7 @@ function Hero() {
             <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25 hover:scale-105">
               Get Free Quote <ArrowRight size={20} />
             </Link>
-            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200">
+            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-white text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200">
               <Phone size={20} /> Call Now
             </a>
           </motion.div>
@@ -50,26 +50,26 @@ function Hero() {
 /* ─── Introduction ─── */
 function Introduction() {
   return (
-    <section className="py-24 bg-brand-dark text-white">
+    <section className="py-24 bg-gray-50 dark:bg-brand-dark text-brand-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <span className="inline-block px-4 py-1.5 bg-white/5/10 text-gray-400 text-sm font-bold rounded-full mb-4 border border-white/20">About Company</span>
+            <span className="inline-block px-4 py-1.5 bg-white/5/10 text-gray-600 dark:text-gray-400 text-sm font-bold rounded-full mb-4 border border-white/20">About Company</span>
             <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] mb-6">
               Leading Building Contractor in <span className="text-brand-yellow-dark">India</span>
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-6 font-medium">
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 font-medium">
               SUBH Construction is a reliable construction contractor providing residential and commercial construction services. We focus on quality materials, skilled labour, modern construction techniques, and timely project delivery.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {[{ icon: Users, label: 'Experienced Engineers' }, { icon: HardHat, label: 'Skilled Workforce' }, { icon: Shield, label: 'Quality Building Materials' }, { icon: Award, label: 'Modern Techniques' }].map((item) => (
-                <div key={item.label} className="flex items-center gap-3 text-gray-300 font-semibold">
+                <div key={item.label} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 font-semibold">
                   <item.icon size={20} className="text-brand-yellow-dark shrink-0" />
                   <span className="text-sm">{item.label}</span>
                 </div>
               ))}
             </div>
-            <Link href="/about" className="inline-flex items-center gap-2 mt-8 text-white font-bold hover:gap-4 hover:text-brand-yellow-dark transition-all">
+            <Link href="/about" className="inline-flex items-center gap-2 mt-8 text-brand-black dark:text-white font-bold hover:gap-4 hover:text-brand-yellow-dark transition-all">
               Learn More About Us <ArrowRight size={18} />
             </Link>
           </motion.div>
@@ -77,7 +77,7 @@ function Introduction() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image src="/images/engineers.png" alt="SUBH Construction engineers reviewing blueprints" width={600} height={500} style={{ width: '100%', height: 'auto' }} className="object-cover rounded-2xl" />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-brand-black text-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-yellow">
+            <div className="absolute -bottom-6 -left-6 bg-white dark:bg-brand-black text-brand-black dark:text-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-yellow">
               <p className="text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-yellow">15+</p>
               <p className="text-sm font-semibold">Years of Trust</p>
             </div>
@@ -100,17 +100,17 @@ const servicesData = [
 
 function ServicesSection() {
   return (
-    <section className="py-24 bg-brand-black">
+    <section className="py-24 bg-white dark:bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="Our Services" title="What We" highlight="Build" description="Comprehensive construction and civil contractor services tailored to your needs." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.map((service, i) => (
-            <motion.div key={service.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-yellow transition-all duration-300">
-              <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-brand-yellow/20 transition-colors">
+            <motion.div key={service.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group p-8 rounded-2xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-brand-yellow transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-gray-100 dark:bg-white/5 flex items-center justify-center mb-6 group-hover:bg-brand-yellow/20 transition-colors">
                 <service.icon size={28} className="text-brand-yellow" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-[family-name:var(--font-heading)]">{service.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">{service.desc}</p>
+              <h3 className="text-xl font-bold text-brand-black dark:text-white mb-3 font-[family-name:var(--font-heading)]">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">{service.desc}</p>
               <Link href="/services" className="inline-flex items-center gap-1 text-brand-yellow text-sm font-semibold hover:gap-3 transition-all">
                 Learn More <ArrowRight size={14} />
               </Link>
@@ -132,12 +132,12 @@ const projectsData = [
 
 function FeaturedProjects() {
   return (
-    <section className="py-24 bg-white/5">
+    <section className="py-24 bg-gray-100 dark:bg-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="Our Work" title="Project" highlight="Gallery" description="Explore our latest completed projects and ongoing construction work." />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projectsData.map((project, i) => (
-            <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group rounded-2xl overflow-hidden bg-brand-black border border-white/10 hover:border-brand-yellow transition-all duration-300">
+            <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group rounded-2xl overflow-hidden bg-white dark:bg-brand-black border border-gray-200 dark:border-white/10 hover:border-brand-yellow transition-all duration-300">
               <div className="relative h-64 overflow-hidden">
                 <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute top-4 left-4">
@@ -145,8 +145,8 @@ function FeaturedProjects() {
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="text-md font-bold text-white font-[family-name:var(--font-heading)] leading-snug">{project.title}</h3>
-                <p className="text-gray-400 text-xs mt-2 flex items-center gap-1"><MapPin size={12} /> {project.loc}</p>
+                <h3 className="text-md font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] leading-snug">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-xs mt-2 flex items-center gap-1"><MapPin size={12} /> {project.loc}</p>
               </div>
             </motion.div>
           ))}
@@ -166,10 +166,10 @@ function TrustElements() {
   return (
     <section className="bg-brand-yellow py-8 border-y border-brand-yellow-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-between items-center gap-6 text-white">
+        <div className="flex flex-wrap justify-between items-center gap-6 text-brand-black dark:text-white">
           {['Free Site Visit', 'Affordable Construction Packages', 'Experienced Civil Engineers', 'Quality Material Guarantee'].map((text, i) => (
             <div key={i} className="flex items-center gap-2 font-bold text-sm md:text-base">
-              <CheckCircle2 size={24} className="text-gray-400" />
+              <CheckCircle2 size={24} className="text-gray-600 dark:text-gray-400" />
               {text}
             </div>
           ))}
@@ -190,18 +190,18 @@ function WhyChooseUs() {
     { icon: HardHat, title: 'Safety Protocols', desc: 'We adhere to the highest workplace safety standards.' },
   ];
   return (
-    <section className="py-24 bg-brand-dark text-white">
+    <section className="py-24 bg-gray-50 dark:bg-brand-dark text-brand-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="Why Us" title="Why Choose" highlight="SUBH Construction" description="Top reasons why clients trust us for their house construction and building needs." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((r, i) => (
-            <motion.div key={r.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex gap-4 p-6 rounded-xl bg-white border border-gray-200 shadow-sm hover:border-white/20 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-lg bg-white/5/5 flex items-center justify-center shrink-0">
-                <r.icon size={22} className="text-gray-400" />
+            <motion.div key={r.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex gap-4 p-6 rounded-xl bg-white text-brand-black border border-gray-200 shadow-sm hover:border-gray-300 hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
+                <r.icon size={22} className="text-gray-600 dark:text-gray-400" />
               </div>
               <div>
                 <h3 className="font-bold font-[family-name:var(--font-heading)] mb-1">{r.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{r.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{r.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -221,21 +221,21 @@ const pricingData = [
 
 function PricingPreview() {
   return (
-    <section className="py-24 bg-white/5">
+    <section className="py-24 bg-gray-100 dark:bg-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="Pricing" title="Construction" highlight="Cost" description="Affordable and transparent pricing for every budget. View our construction packages." />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pricingData.map((pkg, i) => (
-            <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all duration-300 ${pkg.popular ? 'bg-brand-black border-brand-yellow shadow-xl scale-105 z-10' : 'bg-brand-black border-white/10 hover:border-brand-yellow/50'}`}>
+            <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all duration-300 ${pkg.popular ? 'bg-white dark:bg-brand-black border-brand-yellow shadow-xl scale-105 z-10' : 'bg-white dark:bg-brand-black border-gray-200 dark:border-white/10 hover:border-brand-yellow/50'}`}>
               {pkg.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">Most Popular</span>}
-              <h3 className="text-xl font-bold text-white font-[family-name:var(--font-heading)]">{pkg.name}</h3>
+              <h3 className="text-xl font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)]">{pkg.name}</h3>
               <div className="mt-4 mb-6">
                 <span className="text-4xl font-bold text-brand-yellow font-[family-name:var(--font-heading)]">{pkg.price}</span>
-                <span className="text-gray-400 text-sm">{pkg.unit}</span>
+                <span className="text-gray-600 dark:text-gray-400 text-sm">{pkg.unit}</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {pkg.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-gray-300 text-sm">
+                  <li key={f} className="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm">
                     <CheckCircle2 size={16} className="text-brand-yellow shrink-0" /> {f}
                   </li>
                 ))}
@@ -261,18 +261,18 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="py-24 bg-brand-dark text-white">
+    <section className="py-24 bg-gray-50 dark:bg-brand-dark text-brand-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="Testimonials" title="Client" highlight="Reviews" description="See what our happy clients have to say about our construction services." />
         <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((t, i) => (
-            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 rounded-2xl bg-white border border-gray-200 shadow-sm transition-all">
+            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 rounded-2xl bg-white text-brand-black border border-gray-200 shadow-sm transition-all">
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
                   <Star key={j} size={18} className="text-brand-yellow-dark fill-brand-yellow-dark" />
                 ))}
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
               <div>
                 <p className="font-bold">{t.name}</p>
                 <p className="text-sm font-medium">{t.role}</p>
@@ -298,19 +298,19 @@ const faqData = [
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <section className="py-24 bg-brand-black">
+    <section className="py-24 bg-white dark:bg-brand-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="FAQ" title="Frequently Asked" highlight="Questions" description="Find answers to common questions about our construction services." />
         <div className="space-y-4">
           {faqData.map((faq, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="rounded-xl border border-white/10 overflow-hidden">
-              <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors">
-                <span className="text-white font-semibold pr-4">{faq.q}</span>
-                {openIndex === i ? <ChevronUp size={20} className="text-brand-yellow shrink-0" /> : <ChevronDown size={20} className="text-gray-400 shrink-0" />}
+            <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden">
+              <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-100 dark:bg-white/5 transition-colors">
+                <span className="text-brand-black dark:text-white font-semibold pr-4">{faq.q}</span>
+                {openIndex === i ? <ChevronUp size={20} className="text-brand-yellow shrink-0" /> : <ChevronDown size={20} className="text-gray-600 dark:text-gray-400 shrink-0" />}
               </button>
               {openIndex === i && (
                 <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="px-6 pb-6">
-                  <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
                 </motion.div>
               )}
             </motion.div>
@@ -333,14 +333,14 @@ function CTASection() {
           <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">
             Ready to Build Your Dream Project?
           </h2>
-          <p className="text-gray-400/80 text-lg mb-10 max-w-2xl mx-auto font-medium">
+          <p className="text-gray-600 dark:text-gray-400/80 text-lg mb-10 max-w-2xl mx-auto font-medium">
             Contact us today for a free consultation and detailed quote. Let&apos;s turn your vision into reality together.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:shadow-xl hover:scale-105">
+            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-white dark:bg-brand-black text-brand-black dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:bg-white/5 transition-all hover:shadow-xl hover:scale-105">
               <Phone size={20} /> Call Now: +91 9876543210
             </a>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-white-dark text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-black hover:text-white transition-all">
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-brand-black text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white dark:bg-brand-black hover:text-brand-yellow transition-all">
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
           </div>

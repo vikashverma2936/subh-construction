@@ -25,12 +25,12 @@ export default function SectionHeader({ badge, title, highlight, description, ce
           {badge}
         </span>
       )}
-      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-heading)] leading-tight ${light ? 'text-brand-black dark:text-white' : 'text-white'}`}>
+      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-heading)] leading-tight ${light ? 'text-brand-black dark:text-white' : 'text-brand-black dark:text-white'}`}>
         {title}{' '}
         {highlight && <span className="gradient-text">{highlight}</span>}
       </h2>
       {description && (
-        <p className={`mt-4 text-lg max-w-2xl ${center ? 'mx-auto' : ''} ${light ? 'text-gray-600 dark:text-gray-400' : 'text-gray-400'}`}>
+        <p className={`mt-4 text-lg max-w-2xl ${center ? 'mx-auto' : ''} ${light ? 'text-gray-600 dark:text-gray-400' : 'text-gray-600 dark:text-gray-400'}`}>
           {description}
         </p>
       )}
