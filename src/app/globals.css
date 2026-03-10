@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
+@source "../";
 
-@theme inline {
+@theme {
   --color-brand-yellow: #facc15;
   --color-brand-yellow-dark: #eab308;
   --color-brand-black: #111111;
@@ -23,12 +23,6 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 html {
