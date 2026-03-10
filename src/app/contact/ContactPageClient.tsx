@@ -102,11 +102,11 @@ export default function ContactPageClient() {
               </form>
 
               {/* WhatsApp */}
-              <div className="mt-8 p-4 rounded-xl bg-green-500/20 border border-green-500/30 flex items-center gap-4 hover:bg-green-500/30 transition-all cursor-pointer" onClick={() => window.open('https://wa.me/919876543210', '_blank')}>
-                <MessageCircle size={32} className="text-green-400" />
+              <div className="mt-8 p-4 rounded-xl bg-green-100 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 flex items-center gap-4 hover:bg-green-200 dark:hover:bg-green-500/30 transition-all cursor-pointer" onClick={() => window.open('https://wa.me/919876543210', '_blank')}>
+                <MessageCircle size={32} className="text-green-600 dark:text-green-400" />
                 <div>
                   <p className="text-brand-black dark:text-white text-md font-bold">Quick Response via WhatsApp</p>
-                  <span className="text-green-300 text-sm font-medium hover:underline">Chat with us on WhatsApp →</span>
+                  <span className="text-green-700 dark:text-green-300 text-sm font-medium hover:underline">Chat with us on WhatsApp →</span>
                 </div>
               </div>
             </motion.div>

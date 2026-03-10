@@ -107,9 +107,9 @@ export default function ServicesPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6">Need a Custom Construction Solution?</h2>
-            <p className="text-gray-600 dark:text-gray-400/80 font-medium text-lg mb-8">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white dark:bg-brand-black text-brand-black dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:bg-white/5 transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">Need a Custom Construction Solution?</h2>
+            <p className="text-brand-black/80 font-medium text-lg mb-8">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
               Contact Us <ArrowRight size={20} />
             </Link>
           </motion.div>

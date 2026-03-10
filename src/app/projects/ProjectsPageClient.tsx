@@ -12,18 +12,18 @@ const categories = ['All', 'Residential', 'Commercial', 'Industrial'];
 const projects = [
   // Residential (Small/Medium)
   { img: '/images/residential.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP', year: '2024', desc: 'Complete structural remodeling and interior renovation of a 20-year-old traditional home into a contemporary living space.' },
-  { img: '/images/residential.png', title: 'Gupta Villa Construction', cat: 'Residential', loc: 'Indira Nagar, Lucknow, UP', year: '2023', desc: 'Turnkey construction of a modern 3-story independent house with custom interior design and landscaping.' },
-  { img: '/images/residential.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Gomti Nagar, Lucknow, UP', year: '2024', desc: 'A premium gated community of 12 luxury villas featuring modern architecture, smart home integrations, and sustainable materials.' },
+  { img: '/images/residential-build.png', title: 'Gupta Villa Construction', cat: 'Residential', loc: 'Indira Nagar, Lucknow, UP', year: '2023', desc: 'Turnkey construction of a modern 3-story independent house with custom interior design and landscaping.' },
+  { img: '/images/hero-banner.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Gomti Nagar, Lucknow, UP', year: '2024', desc: 'A premium gated community of 12 luxury villas featuring modern architecture, smart home integrations, and sustainable materials.' },
 
   // Commercial (Small/Medium)
   { img: '/images/commercial.png', title: 'Boutique Cafe Interior', cat: 'Commercial', loc: 'Hazratganj, Lucknow, UP', year: '2024', desc: 'Complete premium interior fit-out for a high-end cafe, featuring custom woodwork, ambient lighting, and modern aesthetics.' },
-  { img: '/images/commercial.png', title: 'Retail Space Buildout', cat: 'Commercial', loc: 'Gomti Nagar, Lucknow, UP', year: '2023', desc: 'Structural modifications and interior construction for a 5,000 sq ft modern retail showroom.' },
-  { img: '/images/commercial.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Kanpur Road, Lucknow, UP', year: '2022', desc: 'A 15-story state-of-the-art commercial complex with LEED Gold certification and premium office spaces.' },
+  { img: '/images/commercial-build.png', title: 'Retail Space Buildout', cat: 'Commercial', loc: 'Gomti Nagar, Lucknow, UP', year: '2023', desc: 'Structural modifications and interior construction for a 5,000 sq ft modern retail showroom.' },
+  { img: '/images/engineers-site.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Kanpur Road, Lucknow, UP', year: '2022', desc: 'A 15-story state-of-the-art commercial complex with LEED Gold certification and premium office spaces.' },
 
   // Industrial (Strictly RCC Roads)
   { img: '/images/infrastructure.png', title: 'Kisan Path RCC Road Extension', cat: 'Industrial', loc: 'Lucknow Outskirts, UP', year: '2023', desc: 'Construction of a heavy-duty 5km RCC road to facilitate smooth industrial transport and connectivity.' },
-  { img: '/images/infrastructure.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP', year: '2024', desc: 'High-strength M40 grade RCC driveway and loading bay construction designed to withstand continuous heavy truck movement.' },
-  { img: '/images/infrastructure.png', title: 'Industrial Estate Access Road', cat: 'Industrial', loc: 'Nadarganj, Lucknow, UP', year: '2022', desc: 'Development of an RCC access road connecting the main highway to the local industrial sector, ensuring all-weather durability.' },
+  { img: '/images/infra-project.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP', year: '2024', desc: 'High-strength M40 grade RCC driveway and loading bay construction designed to withstand continuous heavy truck movement.' },
+  { img: '/images/workers-team.png', title: 'Industrial Estate Access Road', cat: 'Industrial', loc: 'Nadarganj, Lucknow, UP', year: '2022', desc: 'Development of an RCC access road connecting the main highway to the local industrial sector, ensuring all-weather durability.' },
 ];
 
 export default function ProjectsPageClient() {
@@ -90,9 +90,9 @@ export default function ProjectsPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6">Have a Project in Mind?</h2>
-            <p className="text-gray-600 dark:text-gray-400/80 font-medium text-lg mb-8">Let&apos;s discuss how we can bring your construction vision to life.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white dark:bg-brand-black text-brand-black dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:bg-white/5 transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">Have a Project in Mind?</h2>
+            <p className="text-brand-black/80 font-medium text-lg mb-8">Let&apos;s discuss how we can bring your construction vision to life.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
               Start a Project <ArrowRight size={20} />
             </Link>
           </motion.div>

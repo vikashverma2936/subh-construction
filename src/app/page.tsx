@@ -127,7 +127,7 @@ const projectsData = [
   { img: '/images/residential.png', title: 'Luxury House Construction', cat: 'Residential House', loc: 'Gomti Nagar, Lucknow' },
   { img: '/images/commercial.png', title: 'Modern Commercial Building', cat: 'Commercial Building', loc: 'Hazratganj, Lucknow' },
   { img: '/images/infrastructure.png', title: 'Apartment Complex Buildout', cat: 'Apartments', loc: 'Kanpur Road, Lucknow' },
-  { img: '/images/workers.png', title: 'Ongoing Construction Work', cat: 'Work In Progress', loc: 'Aliganj, Lucknow' },
+  { img: '/images/workers-team.png', title: 'Ongoing Construction Work', cat: 'Work In Progress', loc: 'Aliganj, Lucknow' },
 ];
 
 function FeaturedProjects() {
@@ -141,7 +141,7 @@ function FeaturedProjects() {
               <div className="relative h-64 overflow-hidden">
                 <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">{project.cat}</span>
+                <span className="px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">{project.cat}</span>
                 </div>
               </div>
               <div className="p-5">
@@ -333,14 +333,14 @@ function CTASection() {
           <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">
             Ready to Build Your Dream Project?
           </h2>
-          <p className="text-gray-600 dark:text-gray-400/80 text-lg mb-10 max-w-2xl mx-auto font-medium">
+          <p className="text-gray-800 text-lg mb-10 max-w-2xl mx-auto font-medium">
             Contact us today for a free consultation and detailed quote. Let&apos;s turn your vision into reality together.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-white dark:bg-brand-black text-brand-black dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:bg-white/5 transition-all hover:shadow-xl hover:scale-105">
+            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:shadow-xl hover:scale-105">
               <Phone size={20} /> Call Now: +91 9876543210
             </a>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-brand-black text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white dark:bg-brand-black hover:text-brand-yellow transition-all">
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-black text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-black hover:text-white transition-all">
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
           </div>

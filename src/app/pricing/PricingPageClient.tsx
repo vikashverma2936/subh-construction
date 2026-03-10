@@ -135,9 +135,9 @@ export default function PricingPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6">Ready to Get a Detailed Quote?</h2>
-            <p className="text-gray-600 dark:text-gray-400/80 font-medium text-lg mb-8">Our team will prepare a customized quotation based on your specific requirements.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white dark:bg-brand-black text-brand-black dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:bg-white/5 transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">Ready to Get a Detailed Quote?</h2>
+            <p className="text-brand-black/80 font-medium text-lg mb-8">Our team will prepare a customized quotation based on your specific requirements.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
               <Phone size={20} /> Get Free Consultation
             </Link>
           </motion.div>
