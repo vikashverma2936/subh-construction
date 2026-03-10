@@ -95,7 +95,7 @@ export default function ContactPageClient() {
                   </div>
                 </div>
                 <textarea placeholder="Your Message *" required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-5 py-3.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-brand-black dark:text-white placeholder-gray-400 focus:outline-none focus:border-brand-yellow/50 focus:ring-1 focus:ring-brand-yellow/30 transition-all resize-none font-medium" />
-                <button type="submit" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all hover:scale-105 w-full justify-center sm:w-auto mt-2">
+                <button type="submit" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-yellow-dark transition-all hover:scale-105 w-full justify-center sm:w-auto mt-2">
                   <Send size={20} /> Send Message
                 </button>
                 {submitted && <p className="text-brand-yellow font-medium text-sm mt-3 flex items-center gap-2"><CheckCircle2 size={16} /> Message sent successfully! We&apos;ll contact you shortly.</p>}

@@ -13,17 +13,17 @@ const projects = [
   // Residential (Small/Medium)
   { img: '/images/residential.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP', year: '2024', desc: 'Complete structural remodeling and interior renovation of a 20-year-old traditional home into a contemporary living space.' },
   { img: '/images/residential-build.png', title: 'Gupta Villa Construction', cat: 'Residential', loc: 'Indira Nagar, Lucknow, UP', year: '2023', desc: 'Turnkey construction of a modern 3-story independent house with custom interior design and landscaping.' },
-  { img: '/images/hero-banner.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Gomti Nagar, Lucknow, UP', year: '2024', desc: 'A premium gated community of 12 luxury villas featuring modern architecture, smart home integrations, and sustainable materials.' },
+  { img: '/images/residential-villas.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Gomti Nagar, Lucknow, UP', year: '2024', desc: 'A premium gated community of 12 luxury villas featuring modern architecture, smart home integrations, and sustainable materials.' },
 
   // Commercial (Small/Medium)
-  { img: '/images/commercial.png', title: 'Boutique Cafe Interior', cat: 'Commercial', loc: 'Hazratganj, Lucknow, UP', year: '2024', desc: 'Complete premium interior fit-out for a high-end cafe, featuring custom woodwork, ambient lighting, and modern aesthetics.' },
+  { img: '/images/commercial-interior.png', title: 'Boutique Cafe Interior', cat: 'Commercial', loc: 'Hazratganj, Lucknow, UP', year: '2024', desc: 'Complete premium interior fit-out for a high-end cafe, featuring custom woodwork, ambient lighting, and modern aesthetics.' },
   { img: '/images/commercial-build.png', title: 'Retail Space Buildout', cat: 'Commercial', loc: 'Gomti Nagar, Lucknow, UP', year: '2023', desc: 'Structural modifications and interior construction for a 5,000 sq ft modern retail showroom.' },
-  { img: '/images/engineers-site.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Kanpur Road, Lucknow, UP', year: '2022', desc: 'A 15-story state-of-the-art commercial complex with LEED Gold certification and premium office spaces.' },
+  { img: '/images/commercial-office.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Kanpur Road, Lucknow, UP', year: '2022', desc: 'A 15-story state-of-the-art commercial complex with LEED Gold certification and premium office spaces.' },
 
   // Industrial (Strictly RCC Roads)
   { img: '/images/infrastructure.png', title: 'Kisan Path RCC Road Extension', cat: 'Industrial', loc: 'Lucknow Outskirts, UP', year: '2023', desc: 'Construction of a heavy-duty 5km RCC road to facilitate smooth industrial transport and connectivity.' },
   { img: '/images/infra-project.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP', year: '2024', desc: 'High-strength M40 grade RCC driveway and loading bay construction designed to withstand continuous heavy truck movement.' },
-  { img: '/images/workers-team.png', title: 'Industrial Estate Access Road', cat: 'Industrial', loc: 'Nadarganj, Lucknow, UP', year: '2022', desc: 'Development of an RCC access road connecting the main highway to the local industrial sector, ensuring all-weather durability.' },
+  { img: '/images/industrial-road.png', title: 'Industrial Estate Access Road', cat: 'Industrial', loc: 'Nadarganj, Lucknow, UP', year: '2022', desc: 'Development of an RCC access road connecting the main highway to the local industrial sector, ensuring all-weather durability.' },
 ];
 
 export default function ProjectsPageClient() {

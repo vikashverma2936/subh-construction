@@ -115,7 +115,7 @@ export default function PricingPageClient() {
                   </div>
                 </div>
 
-                <Link href="/contact" className={`mt-8 block text-center py-3.5 rounded-full font-bold transition-all ${pkg.popular ? 'bg-brand-yellow text-brand-black hover:bg-white' : 'border-2 border-brand-black text-brand-black hover:bg-white dark:bg-brand-black hover:text-brand-black dark:text-white'}`}>
+                <Link href="/contact" className={`mt-8 block text-center py-3.5 rounded-full font-bold transition-all ${pkg.popular ? 'bg-brand-yellow text-brand-black hover:bg-brand-yellow-dark' : 'border-2 border-brand-black dark:border-white/10 text-brand-black dark:text-white hover:bg-gray-100 dark:hover:bg-white/5'}`}>
                   Get Started
                 </Link>
               </motion.div>
