@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Star, Shield, Phone } from 'lucide-react';
-import SectionHeader from '@/components/SectionHeader';
+import { CheckCircle2, Star, Shield, Phone } from 'lucide-react';
 
 const packages = [
   {
@@ -57,66 +56,66 @@ export default function PricingPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-brand-black">
+      <section className="pt-32 pb-20 bg-brand-blue-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">Pricing</span>
             <h1 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">
               Construction <span className="gradient-text">Rates</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Transparent pricing with no hidden costs. Choose the package that fits your budget and dream.</p>
+            <p className="text-gray-200 text-lg max-w-2xl mx-auto font-light">Transparent pricing with no hidden costs. Choose the package that fits your budget and dream.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Packages */}
-      <section className="py-24 bg-brand-dark">
+      <section className="py-24 bg-brand-grey text-brand-blue-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {packages.map((pkg, i) => (
-              <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all ${pkg.popular ? 'bg-brand-yellow/5 border-brand-yellow/40' : 'bg-white/5 border-white/5'}`}>
+              <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all ${pkg.popular ? 'bg-brand-blue text-white shadow-xl scale-105 z-10' : 'bg-white border-brand-blue/20 hover:border-brand-blue shadow-md'}`}>
                 {pkg.popular && (
                   <div className="absolute -top-3 left-6">
-                    <span className="flex items-center gap-1 px-4 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full"><Star size={12} /> Most Popular</span>
+                    <span className="flex items-center gap-1 px-4 py-1 bg-brand-yellow text-brand-blue-dark text-xs font-bold rounded-full"><Star size={12} /> Most Popular</span>
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-white font-[family-name:var(--font-heading)]">{pkg.name}</h3>
-                <p className="text-gray-400 text-sm mt-2 mb-4">{pkg.desc}</p>
+                <h3 className={`text-2xl font-bold font-[family-name:var(--font-heading)] ${pkg.popular ? 'text-white' : 'text-brand-blue-dark'}`}>{pkg.name}</h3>
+                <p className={`text-sm mt-2 mb-4 font-medium ${pkg.popular ? 'text-gray-300' : 'text-brand-grey-dark'}`}>{pkg.desc}</p>
                 <div className="mb-6">
                   <span className="text-5xl font-bold text-brand-yellow font-[family-name:var(--font-heading)]">{pkg.price}</span>
-                  <span className="text-gray-400">{pkg.unit}</span>
+                  <span className={pkg.popular ? 'text-gray-300' : 'text-brand-grey-dark'}>{pkg.unit}</span>
                 </div>
 
                 {/* Features */}
                 <ul className="space-y-2 mb-6">
                   {pkg.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-gray-300 text-sm">
+                    <li key={f} className={`flex items-center gap-2 text-sm font-semibold ${pkg.popular ? 'text-gray-200' : 'text-brand-blue-light'}`}>
                       <CheckCircle2 size={16} className="text-brand-yellow shrink-0" /> {f}
                     </li>
                   ))}
                 </ul>
 
                 {/* Details */}
-                <div className="space-y-4 pt-6 border-t border-white/10">
+                <div className={`space-y-4 pt-6 border-t ${pkg.popular ? 'border-white/20' : 'border-brand-blue/10'}`}>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1 flex items-center gap-1"><Shield size={14} className="text-brand-yellow" /> Materials</h4>
-                    <p className="text-gray-400 text-xs leading-relaxed">{pkg.materials}</p>
+                    <h4 className={`text-sm font-bold mb-1 flex items-center gap-1 ${pkg.popular ? 'text-white' : 'text-brand-blue-dark'}`}><Shield size={14} className="text-brand-yellow" /> Materials</h4>
+                    <p className={`text-xs font-medium leading-relaxed ${pkg.popular ? 'text-gray-300' : 'text-brand-grey-dark'}`}>{pkg.materials}</p>
                   </div>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1">Finishing Quality</h4>
-                    <p className="text-gray-400 text-xs leading-relaxed">{pkg.finishing}</p>
+                    <h4 className={`text-sm font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-brand-blue-dark'}`}>Finishing Quality</h4>
+                    <p className={`text-xs font-medium leading-relaxed ${pkg.popular ? 'text-gray-300' : 'text-brand-grey-dark'}`}>{pkg.finishing}</p>
                   </div>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1">Warranty</h4>
-                    <p className="text-gray-400 text-xs">{pkg.warranty}</p>
+                    <h4 className={`text-sm font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-brand-blue-dark'}`}>Warranty</h4>
+                    <p className={`text-xs font-medium ${pkg.popular ? 'text-gray-300' : 'text-brand-grey-dark'}`}>{pkg.warranty}</p>
                   </div>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1">Support</h4>
-                    <p className="text-gray-400 text-xs">{pkg.support}</p>
+                    <h4 className={`text-sm font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-brand-blue-dark'}`}>Support</h4>
+                    <p className={`text-xs font-medium ${pkg.popular ? 'text-gray-300' : 'text-brand-grey-dark'}`}>{pkg.support}</p>
                   </div>
                 </div>
 
-                <Link href="/contact" className={`mt-8 block text-center py-3.5 rounded-full font-semibold transition-all ${pkg.popular ? 'bg-brand-yellow text-brand-black hover:bg-brand-yellow-dark' : 'border border-brand-yellow/30 text-brand-yellow hover:bg-brand-yellow hover:text-brand-black'}`}>
+                <Link href="/contact" className={`mt-8 block text-center py-3.5 rounded-full font-bold transition-all ${pkg.popular ? 'bg-brand-yellow text-brand-blue-dark hover:bg-white' : 'border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white'}`}>
                   Get Started
                 </Link>
               </motion.div>
@@ -124,9 +123,9 @@ export default function PricingPageClient() {
           </div>
 
           {/* Note */}
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-12 p-6 rounded-xl bg-white/5 border border-white/5 text-center">
-            <p className="text-gray-400 text-sm">
-              <span className="text-brand-yellow font-semibold">Note:</span> All prices are indicative and may vary based on location, design complexity, and current material costs. Contact us for a detailed, customized quotation.
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-12 p-6 rounded-xl bg-white border border-brand-blue/20 text-center shadow-sm">
+            <p className="text-brand-blue text-sm font-medium">
+              <span className="font-bold">Note:</span> All prices are indicative and may vary based on location, design complexity, and current material costs. Contact us for a detailed, customized quotation.
             </p>
           </motion.div>
         </div>
@@ -136,9 +135,9 @@ export default function PricingPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">Ready to Get a Detailed Quote?</h2>
-            <p className="text-brand-black/70 text-lg mb-8">Our team will prepare a customized quotation based on your specific requirements.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-brand-yellow px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-dark transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-blue-dark mb-6">Ready to Get a Detailed Quote?</h2>
+            <p className="text-brand-blue/80 font-medium text-lg mb-8">Our team will prepare a customized quotation based on your specific requirements.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-blue-dark text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-blue transition-all hover:scale-105">
               <Phone size={20} /> Get Free Consultation
             </Link>
           </motion.div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | SUBH Construction',
   },
   description: 'SUBH Construction delivers high-quality residential, commercial, and infrastructure projects across India. 15+ years of excellence, 250+ completed projects. Get a free quote today!',
-  keywords: ['construction company India', 'residential construction', 'commercial construction', 'infrastructure development', 'building construction Lucknow', 'SUBH Construction', 'house construction cost India'],
+  keywords: ['construction company India', 'civil contractor', 'building contractor', 'home construction services', 'residential construction', 'commercial construction', 'infrastructure development', 'building construction Lucknow', 'SUBH Construction', 'house construction cost India'],
   authors: [{ name: 'SUBH Construction' }],
   openGraph: {
     type: 'website',
@@ -69,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"

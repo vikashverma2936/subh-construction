@@ -31,7 +31,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black border-t border-white/10">
+    <footer className="bg-brand-blue-dark border-t border-brand-blue-light">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -53,7 +53,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-yellow hover:text-brand-black transition-all duration-200"
+                  className="w-10 h-10 rounded-full bg-brand-blue-light flex items-center justify-center text-brand-grey-dark hover:bg-brand-yellow hover:text-brand-blue-dark transition-all duration-200"
                 >
                   <social.icon size={18} />
                 </a>
@@ -119,7 +119,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/5">
+      <div className="border-t border-brand-blue-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
