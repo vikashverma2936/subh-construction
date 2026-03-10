@@ -127,9 +127,9 @@ function ServicesSection() {
 
 /* ─── Featured Projects ─── */
 const projectsData = [
-  { img: '/images/residential.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Lucknow, UP' },
-  { img: '/images/commercial.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Noida, UP' },
-  { img: '/images/infrastructure.png', title: 'National Highway Extension', cat: 'Infrastructure', loc: 'Delhi NCR' },
+  { img: '/images/residential.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP' },
+  { img: '/images/commercial.png', title: 'Boutique Cafe Interior', cat: 'Commercial', loc: 'Hazratganj, Lucknow, UP' },
+  { img: '/images/infrastructure.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP' },
 ];
 
 function FeaturedProjects() {

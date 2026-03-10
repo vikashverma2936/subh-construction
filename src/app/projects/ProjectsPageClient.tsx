@@ -10,15 +10,20 @@ import Link from 'next/link';
 const categories = ['All', 'Residential', 'Commercial', 'Industrial'];
 
 const projects = [
-  { img: '/images/residential.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Lucknow, UP', year: '2024', desc: 'A premium gated community of 32 luxury villas with modern amenities, landscaped gardens, and private swimming pools.' },
-  { img: '/images/commercial.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Noida, UP', year: '2023', desc: 'A 22-story commercial tower featuring Grade-A office spaces, smart building systems, and sustainable design.' },
-  { img: '/images/infrastructure.png', title: 'National Highway Extension', cat: 'Industrial', loc: 'Delhi NCR', year: '2023', desc: 'A 45km highway expansion project with 4-lane divided carriageway, service roads, and 3 major interchanges.' },
-  { img: '/images/residential.png', title: 'Green Valley Apartments', cat: 'Residential', loc: 'Kanpur, UP', year: '2024', desc: 'A 5-tower residential complex with 200+ apartments, rooftop gardens, club house, and recreational facilities.' },
-  { img: '/images/commercial.png', title: 'City Center Mall', cat: 'Commercial', loc: 'Lucknow, UP', year: '2022', desc: 'A 300,000 sq ft retail and entertainment destination with multiplex, food court, and anchor retail stores.' },
-  { img: '/images/infrastructure.png', title: 'Riverside Bridge Project', cat: 'Industrial', loc: 'Varanasi, UP', year: '2022', desc: 'A 1.2km cable-stayed bridge crossing the Ganges river, connecting the eastern and western districts.' },
-  { img: '/images/residential.png', title: 'Royal Heights Residency', cat: 'Residential', loc: 'Agra, UP', year: '2023', desc: 'Ultra-premium 3 and 4 BHK residences with Italian marble flooring, modular kitchens, and panoramic views.' },
-  { img: '/images/commercial.png', title: 'TechPark Innovation Hub', cat: 'Commercial', loc: 'Greater Noida', year: '2024', desc: 'A state-of-the-art IT park with co-working spaces, server rooms, and energy-efficient building design.' },
-  { img: '/images/infrastructure.png', title: 'Industrial Warehouse Complex', cat: 'Industrial', loc: 'Mathura, UP', year: '2021', desc: 'A 500,000 sq ft industrial warehouse complex with loading bays, cold storage, and automated logistics.' },
+  // Residential (Small/Medium)
+  { img: '/images/residential.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP', year: '2024', desc: 'Complete structural remodeling and interior renovation of a 20-year-old traditional home into a contemporary living space.' },
+  { img: '/images/residential.png', title: 'Gupta Villa Construction', cat: 'Residential', loc: 'Indira Nagar, Lucknow, UP', year: '2023', desc: 'Turnkey construction of a modern 3-story independent house with custom interior design and landscaping.' },
+  { img: '/images/residential.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Gomti Nagar, Lucknow, UP', year: '2024', desc: 'A premium gated community of 12 luxury villas featuring modern architecture, smart home integrations, and sustainable materials.' },
+
+  // Commercial (Small/Medium)
+  { img: '/images/commercial.png', title: 'Boutique Cafe Interior', cat: 'Commercial', loc: 'Hazratganj, Lucknow, UP', year: '2024', desc: 'Complete premium interior fit-out for a high-end cafe, featuring custom woodwork, ambient lighting, and modern aesthetics.' },
+  { img: '/images/commercial.png', title: 'Retail Space Buildout', cat: 'Commercial', loc: 'Gomti Nagar, Lucknow, UP', year: '2023', desc: 'Structural modifications and interior construction for a 5,000 sq ft modern retail showroom.' },
+  { img: '/images/commercial.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Kanpur Road, Lucknow, UP', year: '2022', desc: 'A 15-story state-of-the-art commercial complex with LEED Gold certification and premium office spaces.' },
+
+  // Industrial (Strictly RCC Roads)
+  { img: '/images/infrastructure.png', title: 'Kisan Path RCC Road Extension', cat: 'Industrial', loc: 'Lucknow Outskirts, UP', year: '2023', desc: 'Construction of a heavy-duty 5km RCC road to facilitate smooth industrial transport and connectivity.' },
+  { img: '/images/infrastructure.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP', year: '2024', desc: 'High-strength M40 grade RCC driveway and loading bay construction designed to withstand continuous heavy truck movement.' },
+  { img: '/images/infrastructure.png', title: 'Industrial Estate Access Road', cat: 'Industrial', loc: 'Nadarganj, Lucknow, UP', year: '2022', desc: 'Development of an RCC access road connecting the main highway to the local industrial sector, ensuring all-weather durability.' },
 ];
 
 export default function ProjectsPageClient() {
