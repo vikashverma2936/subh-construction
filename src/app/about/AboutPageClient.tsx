@@ -32,11 +32,11 @@ export default function AboutPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-brand-blue-dark">
+      <section className="relative pt-32 pb-20 bg-brand-black">
         <div className="absolute inset-0 opacity-20">
           <Image src="/images/team.png" alt="SUBH Construction Team" fill sizes="100vw" className="object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-dark via-brand-blue-dark/90 to-brand-blue-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">About Us</span>
@@ -49,7 +49,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-brand-blue">
+      <section className="py-16 bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -64,18 +64,18 @@ export default function AboutPageClient() {
       </section>
 
       {/* Company Story */}
-      <section className="py-24 bg-brand-grey text-brand-blue-dark">
+      <section className="py-24 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <SectionHeader badge="Our Story" title="From Humble Beginnings to" highlight="Construction Excellence" center={false} />
-              <p className="text-brand-grey-dark font-medium leading-relaxed mb-6">
+              <p className="text-gray-400 font-medium leading-relaxed mb-6">
                 Founded in 2010 by Suresh Bhardwaj, SUBH Construction began as a small residential construction firm in Lucknow. With a vision to deliver uncompromising quality and transparent service, the company quickly earned the trust of homeowners across Uttar Pradesh.
               </p>
-              <p className="text-brand-grey-dark font-medium leading-relaxed mb-6">
+              <p className="text-gray-400 font-medium leading-relaxed mb-6">
                 Over the past 15+ years, we have grown into a full-service construction company with capabilities spanning residential, commercial, and infrastructure development. Today, our team of 120+ engineers, architects, and skilled workers has successfully completed over 250 projects.
               </p>
-              <p className="text-brand-grey-dark font-medium leading-relaxed">
+              <p className="text-gray-400 font-medium leading-relaxed">
                 Our growth has been fueled by a single principle: every project deserves the same dedication, quality, and attention to detail — whether it&apos;s a single-family home or a multi-story commercial complex.
               </p>
             </motion.div>
@@ -87,7 +87,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-brand-blue">
+      <section className="py-24 bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader badge="Our Purpose" title="Mission &" highlight="Vision" />
           <div className="grid md:grid-cols-2 gap-8">
@@ -114,7 +114,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-brand-blue-dark">
+      <section className="py-24 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader badge="Our Team" title="Meet Our" highlight="Leadership" description="The experienced professionals driving SUBH Construction forward." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -133,7 +133,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Achievements */}
-      <section className="py-24 bg-brand-blue">
+      <section className="py-24 bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader badge="Achievements" title="Awards &" highlight="Certifications" />
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
@@ -151,9 +151,9 @@ export default function AboutPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-blue-dark mb-6">Want to Work With Us?</h2>
-            <p className="text-brand-blue/80 font-medium text-lg mb-8">Join hundreds of satisfied clients who chose SUBH Construction for their dream projects.</p>
-            <a href="/contact" className="inline-flex items-center gap-2 bg-brand-blue-dark text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-blue transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">Want to Work With Us?</h2>
+            <p className="text-gray-400/80 font-medium text-lg mb-8">Join hundreds of satisfied clients who chose SUBH Construction for their dream projects.</p>
+            <a href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
               <TrendingUp size={20} /> Start Your Project
             </a>
           </motion.div>

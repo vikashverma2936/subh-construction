@@ -1,37 +1,37 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Clock, Award, Users, Star, ChevronDown, ChevronUp, Building2, Home as HomeIcon, Paintbrush, HardHat, Landmark, ClipboardList, CheckCircle2, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowRight, Shield, Clock, Award, Users, Star, ChevronDown, ChevronUp, Building2, Home as HomeIcon, Paintbrush, HardHat, Landmark, ClipboardList, CheckCircle2, Phone, Mail, MapPin } from 'lucide-react';
 import SectionHeader from '@/components/SectionHeader';
 import { useState } from 'react';
 
-/* ─── Hero ─── */
+/* ΓöÇΓöÇΓöÇ Hero ΓöÇΓöÇΓöÇ */
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <Image src="/images/hero.png" alt="High-quality residential and commercial construction site" fill sizes="100vw" className="object-cover" priority />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-brand-dark/70 to-black/40" />
+      <Image src="/images/hero.png" alt="Modern construction site at golden hour" fill sizes="100vw" className="object-cover" priority />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">
-            🏗️ Leading Civil Contractor in India
+            ≡ƒÅù∩╕Å India&apos;s Trusted Construction Partner
           </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-[family-name:var(--font-heading)] text-white leading-tight">
-            Trusted Construction Services in{' '}
-            <span className="gradient-text">India</span>
+            Building the Future with{' '}
+            <span className="gradient-text">Strength &amp; Trust</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed font-light">
-            SUBH Construction provides reliable residential, commercial, and renovation construction services with quality materials and experienced engineers.
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed">
+            SUBH Construction delivers high-quality residential, commercial, and infrastructure projects across India.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="mt-10 flex flex-wrap gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25 hover:scale-105">
               Get Free Quote <ArrowRight size={20} />
             </Link>
-            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200">
-              <Phone size={20} /> Call Now
-            </a>
+            <Link href="/projects" className="inline-flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-200 hover:border-brand-yellow hover:text-brand-yellow">
+              View Projects
+            </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[{ n: '250+', l: 'Projects Completed' }, { n: '15+', l: 'Years Experience' }, { n: '120+', l: 'Expert Engineers' }, { n: '500+', l: 'Happy Clients' }].map((s) => (
@@ -47,39 +47,42 @@ function Hero() {
   );
 }
 
-/* ─── Introduction ─── */
+/* ΓöÇΓöÇΓöÇ Introduction ΓöÇΓöÇΓöÇ */
 function Introduction() {
   return (
-    <section className="py-24 bg-brand-dark text-white">
+    <section className="py-24 bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <span className="inline-block px-4 py-1.5 bg-white/5/10 text-gray-400 text-sm font-bold rounded-full mb-4 border border-white/20">About Company</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] mb-6">
-              Leading Building Contractor in <span className="text-brand-yellow-dark">India</span>
+            <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 text-brand-yellow text-sm font-semibold rounded-full mb-4 border border-brand-yellow/20">About Us</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">
+              We Build Dreams Into <span className="gradient-text">Reality</span>
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-6 font-medium">
-              SUBH Construction is a reliable construction contractor providing residential and commercial construction services. We focus on quality materials, skilled labour, modern construction techniques, and timely project delivery.
+            <p className="text-gray-400 leading-relaxed mb-6">
+              With over 15 years of experience, SUBH Construction has established itself as one of India&apos;s most trusted construction companies. We combine traditional craftsmanship with modern engineering to deliver projects that exceed expectations.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              From luxury villas to towering commercial complexes, our team of 120+ skilled engineers and architects work together to turn your vision into reality ΓÇö on time, within budget, and with uncompromising quality.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {[{ icon: Users, label: 'Experienced Engineers' }, { icon: HardHat, label: 'Skilled Workforce' }, { icon: Shield, label: 'Quality Building Materials' }, { icon: Award, label: 'Modern Techniques' }].map((item) => (
-                <div key={item.label} className="flex items-center gap-3 text-gray-300 font-semibold">
-                  <item.icon size={20} className="text-brand-yellow-dark shrink-0" />
-                  <span className="text-sm">{item.label}</span>
+              {[{ icon: Shield, label: 'Quality Guaranteed' }, { icon: Clock, label: 'On-Time Delivery' }, { icon: Award, label: 'Award Winning' }, { icon: Users, label: 'Expert Team' }].map((item) => (
+                <div key={item.label} className="flex items-center gap-3 text-gray-300">
+                  <item.icon size={20} className="text-brand-yellow shrink-0" />
+                  <span className="text-sm font-medium">{item.label}</span>
                 </div>
               ))}
             </div>
-            <Link href="/about" className="inline-flex items-center gap-2 mt-8 text-white font-bold hover:gap-4 hover:text-brand-yellow-dark transition-all">
+            <Link href="/about" className="inline-flex items-center gap-2 mt-8 text-brand-yellow font-semibold hover:gap-4 transition-all">
               Learn More About Us <ArrowRight size={18} />
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden">
               <Image src="/images/engineers.png" alt="SUBH Construction engineers reviewing blueprints" width={600} height={500} style={{ width: '100%', height: 'auto' }} className="object-cover rounded-2xl" />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-brand-black text-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-yellow">
-              <p className="text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-yellow">15+</p>
-              <p className="text-sm font-semibold">Years of Trust</p>
+            <div className="absolute -bottom-6 -left-6 bg-brand-yellow text-brand-black p-6 rounded-2xl shadow-xl">
+              <p className="text-4xl font-bold font-[family-name:var(--font-heading)]">15+</p>
+              <p className="text-sm font-semibold">Years of Excellence</p>
             </div>
           </motion.div>
         </div>
@@ -88,25 +91,25 @@ function Introduction() {
   );
 }
 
-/* ─── Services Overview ─── */
+/* ΓöÇΓöÇΓöÇ Services Overview ΓöÇΓöÇΓöÇ */
 const servicesData = [
-  { icon: HomeIcon, title: 'House Construction', desc: 'Custom residential homes built with top quality materials and solid foundations.' },
-  { icon: Building2, title: 'Commercial Building Construction', desc: 'Reliable construction for modern office buildings, retail spaces, and commercial complexes.' },
-  { icon: Paintbrush, title: 'Building Renovation', desc: 'Expert remodeling and renovation services to modernize your existing space.' },
-  { icon: HardHat, title: 'Interior Work', desc: 'Premium interior finishes, false ceilings, flooring, and woodwork.' },
-  { icon: Landmark, title: 'Civil Construction', desc: 'Strong structure and foundation work ensuring safety and longevity of the building.' },
-  { icon: ClipboardList, title: 'Architectural Planning', desc: 'Professional home designs, floor plans, and elevation planning by expert architects.' },
+  { icon: HomeIcon, title: 'Residential Construction', desc: 'Custom homes, villas, and apartments built with quality materials and modern design.' },
+  { icon: Building2, title: 'Commercial Construction', desc: 'Office buildings, retail spaces, and commercial complexes designed for success.' },
+  { icon: Paintbrush, title: 'Renovation & Remodeling', desc: 'Transform your existing spaces with modern renovations and remodeling services.' },
+  { icon: HardHat, title: 'Interior Construction', desc: 'Premium interior construction with finest finishes and expert craftsmanship.' },
+  { icon: Landmark, title: 'Infrastructure Development', desc: 'Roads, bridges, and public infrastructure projects built to last generations.' },
+  { icon: ClipboardList, title: 'Project Management', desc: 'End-to-end project management for seamless construction execution.' },
 ];
 
 function ServicesSection() {
   return (
-    <section className="py-24 bg-brand-black">
+    <section className="py-24 bg-brand-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="Our Services" title="What We" highlight="Build" description="Comprehensive construction and civil contractor services tailored to your needs." />
+        <SectionHeader badge="Our Services" title="What We" highlight="Build" description="Comprehensive construction services tailored to your needs ΓÇö from concept to completion." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.map((service, i) => (
-            <motion.div key={service.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-yellow transition-all duration-300">
-              <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-brand-yellow/20 transition-colors">
+            <motion.div key={service.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group p-8 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-yellow/30 hover:bg-white/10 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-brand-yellow/10 flex items-center justify-center mb-6 group-hover:bg-brand-yellow/20 transition-colors">
                 <service.icon size={28} className="text-brand-yellow" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3 font-[family-name:var(--font-heading)]">{service.title}</h3>
@@ -122,31 +125,30 @@ function ServicesSection() {
   );
 }
 
-/* ─── Featured Projects ─── */
+/* ΓöÇΓöÇΓöÇ Featured Projects ΓöÇΓöÇΓöÇ */
 const projectsData = [
-  { img: '/images/residential.png', title: 'Luxury House Construction', cat: 'Residential House', loc: 'Gomti Nagar, Lucknow' },
-  { img: '/images/commercial.png', title: 'Modern Commercial Building', cat: 'Commercial Building', loc: 'Hazratganj, Lucknow' },
-  { img: '/images/infrastructure.png', title: 'Apartment Complex Buildout', cat: 'Apartments', loc: 'Kanpur Road, Lucknow' },
-  { img: '/images/workers.png', title: 'Ongoing Construction Work', cat: 'Work In Progress', loc: 'Aliganj, Lucknow' },
+  { img: '/images/residential.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP' },
+  { img: '/images/commercial.png', title: 'Boutique Cafe Interior', cat: 'Commercial', loc: 'Hazratganj, Lucknow, UP' },
+  { img: '/images/infrastructure.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP' },
 ];
 
 function FeaturedProjects() {
   return (
-    <section className="py-24 bg-white/5">
+    <section className="py-24 bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="Our Work" title="Project" highlight="Gallery" description="Explore our latest completed projects and ongoing construction work." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SectionHeader badge="Portfolio" title="Featured" highlight="Projects" description="Explore our latest completed projects showcasing excellence in construction." />
+        <div className="grid md:grid-cols-3 gap-8">
           {projectsData.map((project, i) => (
-            <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group rounded-2xl overflow-hidden bg-brand-black border border-white/10 hover:border-brand-yellow transition-all duration-300">
+            <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="group rounded-2xl overflow-hidden bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all duration-300">
               <div className="relative h-64 overflow-hidden">
                 <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">{project.cat}</span>
                 </div>
               </div>
-              <div className="p-5">
-                <h3 className="text-md font-bold text-white font-[family-name:var(--font-heading)] leading-snug">{project.title}</h3>
-                <p className="text-gray-400 text-xs mt-2 flex items-center gap-1"><MapPin size={12} /> {project.loc}</p>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-white font-[family-name:var(--font-heading)]">{project.title}</h3>
+                <p className="text-gray-400 text-sm mt-1 flex items-center gap-1"><MapPin size={14} /> {project.loc}</p>
               </div>
             </motion.div>
           ))}
@@ -161,46 +163,28 @@ function FeaturedProjects() {
   );
 }
 
-/* ─── Trust Elements Section ─── */
-function TrustElements() {
-  return (
-    <section className="bg-brand-yellow py-8 border-y border-brand-yellow-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-between items-center gap-6 text-white">
-          {['Free Site Visit', 'Affordable Construction Packages', 'Experienced Civil Engineers', 'Quality Material Guarantee'].map((text, i) => (
-            <div key={i} className="flex items-center gap-2 font-bold text-sm md:text-base">
-              <CheckCircle2 size={24} className="text-gray-400" />
-              {text}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Why Choose Us ─── */
+/* ΓöÇΓöÇΓöÇ Why Choose Us ΓöÇΓöÇΓöÇ */
 function WhyChooseUs() {
   const reasons = [
-    { icon: Users, title: 'Experienced Engineers', desc: 'Our civil engineers and architects ensure flawless execution.' },
-    { icon: Shield, title: 'Quality Construction Materials', desc: 'We never compromise on cement, steel, or finishing materials.' },
-    { icon: Landmark, title: 'Affordable Pricing', desc: 'Competitive rates and clear pricing with no hidden charges.' },
-    { icon: Clock, title: 'On-Time Project Delivery', desc: 'We follow strict timelines to ensure your project is completed on schedule.' },
-    { icon: Star, title: 'Customer Satisfaction', desc: 'Our primary goal is to exceed your expectations on every build.' },
-    { icon: HardHat, title: 'Safety Protocols', desc: 'We adhere to the highest workplace safety standards.' },
+    { icon: Shield, title: 'Quality Assurance', desc: 'We use only premium materials and follow strict quality control processes at every construction stage.' },
+    { icon: Clock, title: 'On-Time Delivery', desc: 'Our project management ensures timely completion ΓÇö we value your time as much as you do.' },
+    { icon: Award, title: 'Experienced Team', desc: '120+ skilled engineers and architects with decades of combined construction experience.' },
+    { icon: Users, title: 'Customer Focused', desc: 'Transparent communication, regular updates, and dedicated project managers for every client.' },
+    { icon: CheckCircle2, title: '10-Year Warranty', desc: 'We stand behind our work with comprehensive warranty coverage on all projects.' },
+    { icon: HardHat, title: 'Safety First', desc: 'Industry-leading safety standards and protocols to protect our workers and your project.' },
   ];
   return (
-    <section className="py-24 bg-brand-dark text-white">
+    <section className="py-24 bg-brand-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="Why Us" title="Why Choose" highlight="SUBH Construction" description="Top reasons why clients trust us for their house construction and building needs." />
+        <SectionHeader badge="Why Us" title="Why Choose" highlight="SUBH Construction" description="We go beyond building structures ΓÇö we build trust, quality, and lasting relationships." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((r, i) => (
-            <motion.div key={r.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex gap-4 p-6 rounded-xl bg-white border border-gray-200 shadow-sm hover:border-white/20 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-lg bg-white/5/5 flex items-center justify-center shrink-0">
-                <r.icon size={22} className="text-gray-400" />
+            <motion.div key={r.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex gap-4 p-6 rounded-xl bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-brand-yellow/10 flex items-center justify-center shrink-0">
+                <r.icon size={22} className="text-brand-yellow" />
               </div>
               <div>
-                <h3 className="font-bold font-[family-name:var(--font-heading)] mb-1">{r.title}</h3>
+                <h3 className="text-white font-semibold font-[family-name:var(--font-heading)] mb-1">{r.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{r.desc}</p>
               </div>
             </motion.div>
@@ -211,22 +195,22 @@ function WhyChooseUs() {
   );
 }
 
-/* ─── Pricing Preview ─── */
+/* ΓöÇΓöÇΓöÇ Pricing Preview ΓöÇΓöÇΓöÇ */
 const pricingData = [
-  { name: 'Basic', price: '₹1,600', unit: '/sq ft', features: ['Standard materials', 'Basic finishing', '5-year warranty', 'Phone support'] },
-  { name: 'Standard', price: '₹2,000', unit: '/sq ft', popular: true, features: ['Quality materials', 'Good finishing', '7-year warranty', 'Dedicated manager'] },
-  { name: 'Premium', price: '₹2,600', unit: '/sq ft', features: ['Premium materials', 'Premium finishing', '10-year warranty', 'Priority support'] },
-  { name: 'Luxury', price: '₹3,500', unit: '/sq ft', features: ['Imported materials', 'Luxury finishing', '15-year warranty', '24/7 concierge'] },
+  { name: 'Basic', price: 'Γé╣1,600', unit: '/sq ft', features: ['Standard materials', 'Basic finishing', '5-year warranty', 'Phone support'] },
+  { name: 'Standard', price: 'Γé╣2,000', unit: '/sq ft', popular: true, features: ['Quality materials', 'Good finishing', '7-year warranty', 'Dedicated manager'] },
+  { name: 'Premium', price: 'Γé╣2,600', unit: '/sq ft', features: ['Premium materials', 'Premium finishing', '10-year warranty', 'Priority support'] },
+  { name: 'Luxury', price: 'Γé╣3,500', unit: '/sq ft', features: ['Imported materials', 'Luxury finishing', '15-year warranty', '24/7 concierge'] },
 ];
 
 function PricingPreview() {
   return (
-    <section className="py-24 bg-white/5">
+    <section className="py-24 bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="Pricing" title="Construction" highlight="Cost" description="Affordable and transparent pricing for every budget. View our construction packages." />
+        <SectionHeader badge="Pricing" title="Construction" highlight="Rates" description="Transparent pricing for every budget. Choose the package that fits your dream project." />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pricingData.map((pkg, i) => (
-            <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all duration-300 ${pkg.popular ? 'bg-brand-black border-brand-yellow shadow-xl scale-105 z-10' : 'bg-brand-black border-white/10 hover:border-brand-yellow/50'}`}>
+            <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all duration-300 ${pkg.popular ? 'bg-brand-yellow/5 border-brand-yellow/40 scale-105' : 'bg-white/5 border-white/5 hover:border-brand-yellow/20'}`}>
               {pkg.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">Most Popular</span>}
               <h3 className="text-xl font-bold text-white font-[family-name:var(--font-heading)]">{pkg.name}</h3>
               <div className="mt-4 mb-6">
@@ -251,7 +235,7 @@ function PricingPreview() {
   );
 }
 
-/* ─── Testimonials ─── */
+/* ΓöÇΓöÇΓöÇ Testimonials ΓöÇΓöÇΓöÇ */
 const testimonials = [
   { name: 'Rajesh Sharma', role: 'Homeowner, Lucknow', text: 'SUBH Construction delivered our dream home on time with excellent quality. The attention to detail was remarkable.', rating: 5 },
   { name: 'Priya Kapoor', role: 'Business Owner, Noida', text: 'Our commercial complex was completed ahead of schedule. The team was professional, transparent, and highly skilled.', rating: 5 },
@@ -261,21 +245,21 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="py-24 bg-brand-dark text-white">
+    <section className="py-24 bg-brand-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="Testimonials" title="Client" highlight="Reviews" description="See what our happy clients have to say about our construction services." />
+        <SectionHeader badge="Testimonials" title="What Our Clients" highlight="Say" description="Real feedback from real clients who trusted us with their construction projects." />
         <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((t, i) => (
-            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 rounded-2xl bg-white border border-gray-200 shadow-sm transition-all">
+            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all">
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} size={18} className="text-brand-yellow-dark fill-brand-yellow-dark" />
+                  <Star key={j} size={18} className="text-brand-yellow fill-brand-yellow" />
                 ))}
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
+              <p className="text-gray-300 mb-6 leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
               <div>
-                <p className="font-bold">{t.name}</p>
-                <p className="text-sm font-medium">{t.role}</p>
+                <p className="text-white font-semibold">{t.name}</p>
+                <p className="text-gray-400 text-sm">{t.role}</p>
               </div>
             </motion.div>
           ))}
@@ -285,11 +269,11 @@ function Testimonials() {
   );
 }
 
-/* ─── FAQ ─── */
+/* ΓöÇΓöÇΓöÇ FAQ ΓöÇΓöÇΓöÇ */
 const faqData = [
   { q: 'How long does construction take?', a: 'Construction timelines vary based on project scope. A typical residential home takes 8-12 months, while commercial projects may take 12-24 months. We provide detailed timelines during consultation.' },
-  { q: 'What is the cost per square foot?', a: 'Our construction rates start from ₹1,600/sq ft for basic packages and go up to ₹3,500/sq ft for luxury construction. The final cost depends on materials, design complexity, and finishing quality.' },
-  { q: 'Do you provide project management?', a: 'Yes! Every project gets a dedicated project manager who oversees all aspects — from planning and procurement to quality control and handover.' },
+  { q: 'What is the cost per square foot?', a: 'Our construction rates start from Γé╣1,600/sq ft for basic packages and go up to Γé╣3,500/sq ft for luxury construction. The final cost depends on materials, design complexity, and finishing quality.' },
+  { q: 'Do you provide project management?', a: 'Yes! Every project gets a dedicated project manager who oversees all aspects ΓÇö from planning and procurement to quality control and handover.' },
   { q: 'Can I customize my house design?', a: 'Absolutely. We work closely with you and our architects to create custom designs that match your vision, lifestyle, and budget. Full customization is available on all packages.' },
   { q: 'What areas do you serve?', a: 'We primarily serve Lucknow, Noida, Delhi NCR, Kanpur, and other major cities across Uttar Pradesh. We also undertake projects in neighboring states for larger contracts.' },
   { q: 'Do you provide a warranty?', a: 'Yes, we offer warranties ranging from 5 to 15 years depending on the package. Our warranty covers structural defects, waterproofing, and major systems.' },
@@ -321,7 +305,7 @@ function FAQSection() {
   );
 }
 
-/* ─── CTA ─── */
+/* ΓöÇΓöÇΓöÇ CTA ΓöÇΓöÇΓöÇ */
 function CTASection() {
   return (
     <section className="py-24 bg-brand-yellow relative overflow-hidden">
@@ -333,15 +317,15 @@ function CTASection() {
           <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">
             Ready to Build Your Dream Project?
           </h2>
-          <p className="text-gray-400/80 text-lg mb-10 max-w-2xl mx-auto font-medium">
+          <p className="text-brand-black/70 text-lg mb-10 max-w-2xl mx-auto">
             Contact us today for a free consultation and detailed quote. Let&apos;s turn your vision into reality together.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:shadow-xl hover:scale-105">
-              <Phone size={20} /> Call Now: +91 9876543210
-            </a>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-white-dark text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-black hover:text-white transition-all">
-              <MessageCircle size={20} /> Chat on WhatsApp
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-brand-yellow px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-dark transition-all hover:shadow-xl hover:scale-105">
+              <Phone size={20} /> Contact Us Now
+            </Link>
+            <a href="tel:+919876543210" className="inline-flex items-center gap-2 border-2 border-brand-black text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-black hover:text-brand-yellow transition-all">
+              <Mail size={20} /> +91 9876543210
             </a>
           </div>
         </motion.div>
@@ -350,12 +334,11 @@ function CTASection() {
   );
 }
 
-/* ─── Home Page ─── */
+/* ΓöÇΓöÇΓöÇ Home Page ΓöÇΓöÇΓöÇ */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustElements />
       <Introduction />
       <ServicesSection />
       <FeaturedProjects />

@@ -34,7 +34,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-brand-blue-dark/95 backdrop-blur-md shadow-lg shadow-brand-yellow/5'
+          ? 'bg-brand-black/95 backdrop-blur-md shadow-lg shadow-brand-yellow/5'
           : 'bg-transparent'
       }`}
     >
@@ -73,7 +73,7 @@ export default function Navbar() {
             </button>
             <Link
               href="/contact"
-              className="flex items-center gap-2 bg-brand-yellow text-brand-blue-dark px-5 py-2.5 rounded-full font-bold text-sm hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25"
+              className="flex items-center gap-2 bg-brand-yellow text-brand-black px-5 py-2.5 rounded-full font-bold text-sm hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25"
             >
               <Phone size={16} />
               Get Quote
@@ -107,7 +107,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-brand-blue-dark/98 backdrop-blur-xl border-t border-brand-blue-light"
+            className="lg:hidden bg-brand-black/98 backdrop-blur-xl border-t border-white/10"
           >
             <div className="px-4 py-6 space-y-1">
               {navLinks.map((link, i) => (
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 bg-brand-yellow text-brand-blue-dark px-5 py-3 rounded-full font-bold hover:bg-brand-yellow-dark transition-all"
+                  className="flex items-center justify-center gap-2 bg-brand-yellow text-brand-black px-5 py-3 rounded-full font-bold hover:bg-brand-yellow-dark transition-all"
                 >
                   <Phone size={16} />
                   Get Free Quote

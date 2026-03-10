@@ -33,11 +33,11 @@ export default function ProjectsPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-brand-blue-dark">
+      <section className="relative pt-32 pb-20 bg-brand-black">
         <div className="absolute inset-0 opacity-10">
           <Image src="/images/commercial.png" alt="Construction projects" fill className="object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-dark via-brand-blue-dark/95 to-brand-blue-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">Our Portfolio</span>
@@ -50,12 +50,12 @@ export default function ProjectsPageClient() {
       </section>
 
       {/* Filter & Gallery */}
-      <section className="py-24 bg-brand-grey text-brand-blue-dark">
+      <section className="py-24 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-3 mb-14">
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${filter === cat ? 'bg-brand-blue-dark text-brand-yellow' : 'bg-white text-brand-grey-dark hover:bg-brand-blue-light hover:text-white border border-gray-200'}`}>
+              <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${filter === cat ? 'bg-brand-black text-brand-yellow' : 'bg-white text-gray-400 hover:bg-brand-blue-light hover:text-white border border-gray-200'}`}>
                 {cat}
               </button>
             ))}
@@ -64,12 +64,12 @@ export default function ProjectsPageClient() {
           {/* Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((project, i) => (
-              <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} layout className="group rounded-2xl overflow-hidden bg-brand-blue border border-brand-blue-light hover:border-brand-yellow transition-all duration-300 shadow-md">
+              <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} layout className="group rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-brand-yellow transition-all duration-300 shadow-md">
                 <div className="relative h-64 overflow-hidden">
                   <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-dark/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-brand-yellow text-brand-blue-dark text-xs font-bold rounded-full">{project.cat}</span>
+                    <span className="px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">{project.cat}</span>
                   </div>
                 </div>
                 <div className="p-6">
@@ -90,9 +90,9 @@ export default function ProjectsPageClient() {
       <section className="py-20 bg-brand-yellow">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-blue-dark mb-6">Have a Project in Mind?</h2>
-            <p className="text-brand-blue/80 font-medium text-lg mb-8">Let&apos;s discuss how we can bring your construction vision to life.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-blue-dark text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-blue transition-all hover:scale-105">
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">Have a Project in Mind?</h2>
+            <p className="text-gray-400/80 font-medium text-lg mb-8">Let&apos;s discuss how we can bring your construction vision to life.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
               Start a Project <ArrowRight size={20} />
             </Link>
           </motion.div>
