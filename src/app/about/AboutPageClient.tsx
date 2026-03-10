@@ -34,7 +34,7 @@ export default function AboutPageClient() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-brand-black">
         <div className="absolute inset-0 opacity-20">
-          <Image src="/images/team.png" alt="SUBH Construction Team" fill className="object-cover" />
+          <Image src="/images/team.png" alt="SUBH Construction Team" fill sizes="100vw" className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/90 to-brand-black" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

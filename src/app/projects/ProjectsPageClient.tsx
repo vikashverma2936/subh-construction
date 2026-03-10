@@ -61,7 +61,7 @@ export default function ProjectsPageClient() {
             {filtered.map((project, i) => (
               <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} layout className="group rounded-2xl overflow-hidden bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
-                  <Image src={project.img} alt={project.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">{project.cat}</span>

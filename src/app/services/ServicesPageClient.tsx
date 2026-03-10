@@ -95,7 +95,7 @@ export default function ServicesPageClient() {
               </div>
               <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="relative rounded-2xl overflow-hidden h-[400px]">
-                  <Image src={service.img} alt={service.title} fill className="object-cover" />
+                  <Image src={service.img} alt={service.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
               </div>

@@ -77,7 +77,7 @@ export default function BlogPageClient() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
             <Link href={`/blog/${blogs[0].slug}`} className="group grid lg:grid-cols-2 gap-8 rounded-2xl overflow-hidden bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all">
               <div className="relative h-72 lg:h-full overflow-hidden">
-                <Image src={blogs[0].img} alt={blogs[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={blogs[0].img} alt={blogs[0].title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-8 flex flex-col justify-center">
                 <span className="inline-block px-3 py-1 bg-brand-yellow/10 text-brand-yellow text-xs font-semibold rounded-full w-fit mb-4">Featured</span>
@@ -98,7 +98,7 @@ export default function BlogPageClient() {
               <motion.div key={blog.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Link href={`/blog/${blog.slug}`} className="group block rounded-2xl overflow-hidden bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all">
                   <div className="relative h-56 overflow-hidden">
-                    <Image src={blog.img} alt={blog.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={blog.img} alt={blog.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-white font-[family-name:var(--font-heading)] mb-3 group-hover:text-brand-yellow transition-colors">{blog.title}</h3>

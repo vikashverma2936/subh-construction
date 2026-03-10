@@ -11,7 +11,7 @@ import { useState } from 'react';
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <Image src="/images/hero.png" alt="Modern construction site at golden hour" fill className="object-cover" priority />
+      <Image src="/images/hero.png" alt="Modern construction site at golden hour" fill sizes="100vw" className="object-cover" priority />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
@@ -78,7 +78,7 @@ function Introduction() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
             <div className="relative rounded-2xl overflow-hidden">
-              <Image src="/images/engineers.png" alt="SUBH Construction engineers reviewing blueprints" width={600} height={500} className="object-cover w-full h-[500px] rounded-2xl" />
+              <Image src="/images/engineers.png" alt="SUBH Construction engineers reviewing blueprints" width={600} height={500} style={{ width: '100%', height: 'auto' }} className="object-cover rounded-2xl" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-brand-yellow text-brand-black p-6 rounded-2xl shadow-xl">
               <p className="text-4xl font-bold font-[family-name:var(--font-heading)]">15+</p>
@@ -141,7 +141,7 @@ function FeaturedProjects() {
           {projectsData.map((project, i) => (
             <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="group rounded-2xl overflow-hidden bg-white/5 border border-white/5 hover:border-brand-yellow/20 transition-all duration-300">
               <div className="relative h-64 overflow-hidden">
-                <Image src={project.img} alt={project.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full">{project.cat}</span>
                 </div>
