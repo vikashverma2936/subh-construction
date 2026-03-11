@@ -11,7 +11,7 @@ const categories = ['All', 'Residential', 'Commercial', 'Industrial'];
 
 const projects = [
   // Residential (Small/Medium)
-  { img: '/images/residential.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP', year: '2024', desc: 'Complete structural remodeling and interior renovation of a 20-year-old traditional home into a contemporary living space.' },
+  { img: '/images/proj-res-1.png', title: 'Mishra Residence Renovation', cat: 'Residential', loc: 'Aliganj, Lucknow, UP', year: '2024', desc: 'Complete structural remodeling and interior renovation of a 20-year-old traditional home into a contemporary living space.' },
   { img: '/images/residential-build.png', title: 'Gupta Villa Construction', cat: 'Residential', loc: 'Indira Nagar, Lucknow, UP', year: '2023', desc: 'Turnkey construction of a modern 3-story independent house with custom interior design and landscaping.' },
   { img: '/images/residential-villas.png', title: 'Sunrise Luxury Villas', cat: 'Residential', loc: 'Gomti Nagar, Lucknow, UP', year: '2024', desc: 'A premium gated community of 12 luxury villas featuring modern architecture, smart home integrations, and sustainable materials.' },
 
@@ -21,7 +21,7 @@ const projects = [
   { img: '/images/commercial-office.png', title: 'Metro Business Tower', cat: 'Commercial', loc: 'Kanpur Road, Lucknow, UP', year: '2022', desc: 'A 15-story state-of-the-art commercial complex with LEED Gold certification and premium office spaces.' },
 
   // Industrial (Strictly RCC Roads)
-  { img: '/images/infrastructure.png', title: 'Kisan Path RCC Road Extension', cat: 'Industrial', loc: 'Lucknow Outskirts, UP', year: '2023', desc: 'Construction of a heavy-duty 5km RCC road to facilitate smooth industrial transport and connectivity.' },
+  { img: '/images/proj-ind-1.png', title: 'Kisan Path RCC Road Extension', cat: 'Industrial', loc: 'Lucknow Outskirts, UP', year: '2023', desc: 'Construction of a heavy-duty 5km RCC road to facilitate smooth industrial transport and connectivity.' },
   { img: '/images/infra-project.png', title: 'Transport Nagar RCC Driveway', cat: 'Industrial', loc: 'Transport Nagar, Lucknow, UP', year: '2024', desc: 'High-strength M40 grade RCC driveway and loading bay construction designed to withstand continuous heavy truck movement.' },
   { img: '/images/industrial-road.png', title: 'Industrial Estate Access Road', cat: 'Industrial', loc: 'Nadarganj, Lucknow, UP', year: '2022', desc: 'Development of an RCC access road connecting the main highway to the local industrial sector, ensuring all-weather durability.' },
 ];
@@ -35,7 +35,7 @@ export default function ProjectsPageClient() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-white dark:bg-brand-black">
         <div className="absolute inset-0 opacity-10">
-          <Image src="/images/commercial.png" alt="Construction projects" fill className="object-cover" />
+          <Image src="/images/proj-hero.png" alt="Construction projects" fill className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -55,7 +55,7 @@ export default function ProjectsPageClient() {
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-3 mb-14">
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${filter === cat ? 'bg-white dark:bg-brand-black text-brand-yellow' : 'bg-white text-gray-600 dark:text-gray-400 hover:bg-brand-blue-light hover:text-brand-black dark:text-white border border-gray-200'}`}>
+              <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${filter === cat ? 'bg-white dark:bg-brand-black text-brand-yellow shadow-sm border border-brand-yellow/30' : 'bg-white text-gray-600 dark:bg-white/5 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/10 hover:text-brand-black dark:hover:text-white border border-gray-200 dark:border-white/10'}`}>
                 {cat}
               </button>
             ))}
