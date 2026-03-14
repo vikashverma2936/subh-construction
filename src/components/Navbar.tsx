@@ -34,28 +34,28 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 dark:bg-brand-black/95 backdrop-blur-md shadow-lg shadow-gray-200 dark:shadow-brand-yellow/5'
-          : 'bg-transparent'
+          ? 'bg-brand-blue/98 backdrop-blur-md shadow-lg shadow-black/10'
+          : 'bg-brand-blue'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="subh-ui-22">
+        <div className="subh-ui-23">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="subh-ui-5">
             <Image src="/images/logo.png" alt="SUBH Construction Logo" width={45} height={45} className="rounded" />
             <div>
-              <span className="text-xl font-bold font-[family-name:var(--font-heading)] text-brand-yellow">SUBH</span>
-              <span className="text-xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white ml-1">Construction</span>
+              <span className="subh-ui-24">SUBH</span>
+              <span className="subh-ui-25">Construction</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="subh-ui-26">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-yellow transition-colors duration-200 rounded-lg hover:bg-gray-100 dark:bg-white/5"
+                className="subh-ui-27"
               >
                 {link.label}
               </Link>
@@ -63,35 +63,35 @@ export default function Navbar() {
           </div>
 
           {/* Actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="subh-ui-28">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:text-brand-yellow hover:bg-gray-100 dark:bg-white/5 transition-all"
+              className="subh-ui-29"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <Link
               href="/contact"
-              className="flex items-center gap-2 bg-brand-yellow text-brand-black px-5 py-2.5 rounded-full font-bold text-sm hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25"
+              className="subh-ui-30"
             >
               <Phone size={16} />
-              Get Quote
+              Get Free Quote
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex items-center gap-2">
+          <div className="subh-ui-31">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:text-brand-yellow transition-all"
+              className="subh-ui-29"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-brand-black dark:text-white"
+              className="subh-ui-32"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -107,9 +107,9 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/98 dark:bg-brand-black/98 backdrop-blur-xl border-t border-gray-200 dark:border-white/10"
+            className="subh-ui-33"
           >
-            <div className="px-4 py-6 space-y-1">
+            <div className="subh-ui-34">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -120,7 +120,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-brand-yellow hover:bg-gray-100 dark:bg-white/5 rounded-lg transition-all font-medium"
+                    className="subh-ui-35"
                   >
                     {link.label}
                   </Link>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 bg-brand-yellow text-brand-black px-5 py-3 rounded-full font-bold hover:bg-brand-yellow-dark transition-all"
+                  className="subh-ui-36"
                 >
                   <Phone size={16} />
                   Get Free Quote

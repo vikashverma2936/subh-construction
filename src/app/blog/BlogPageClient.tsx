@@ -58,34 +58,34 @@ export default function BlogPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-brand-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="subh-ui-81">
+        <div className="subh-ui-82">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">Our Blog</span>
-            <h1 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-white mb-6">
+            <span className="subh-ui-44">Our Blog</span>
+            <h1 className="subh-ui-83">
               Construction <span className="gradient-text">Insights</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Expert articles, guides, and tips on construction, building materials, and home design in India.</p>
+            <p className="subh-ui-84">Expert articles, guides, and tips on construction, building materials, and home design in India.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Blog Grid */}
-      <section className="py-24 bg-gray-50 dark:bg-brand-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="subh-ui-85">
+        <div className="subh-ui-22">
           {/* Featured */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-            <Link href={`/blog/${blogs[0].slug}`} className="group grid lg:grid-cols-2 gap-8 rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-yellow/20 transition-all">
-              <div className="relative h-72 lg:h-full overflow-hidden">
-                <Image src={blogs[0].img} alt={blogs[0].title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+            <Link href={`/blog/${blogs[0].slug}`} className="group subh-ui-86">
+              <div className="subh-ui-87">
+                <Image src={blogs[0].img} alt={blogs[0].title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="group subh-ui-88" />
               </div>
-              <div className="p-8 flex flex-col justify-center">
-                <span className="inline-block px-3 py-1 bg-brand-yellow/10 text-brand-yellow text-xs font-semibold rounded-full w-fit mb-4">Featured</span>
-                <h2 className="text-2xl md:text-3xl font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-4 group-hover:text-brand-yellow transition-colors">{blogs[0].title}</h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{blogs[0].excerpt}</p>
-                <div className="flex items-center gap-4 text-gray-500 text-sm">
-                  <span className="flex items-center gap-1"><User size={14} /> {blogs[0].author}</span>
-                  <span className="flex items-center gap-1"><Clock size={14} /> {blogs[0].readTime}</span>
+              <div className="subh-ui-89">
+                <span className="subh-ui-90">Featured</span>
+                <h2 className="group subh-ui-91">{blogs[0].title}</h2>
+                <p className="subh-ui-92">{blogs[0].excerpt}</p>
+                <div className="subh-ui-93">
+                  <span className="subh-ui-94"><User size={14} /> {blogs[0].author}</span>
+                  <span className="subh-ui-94"><Clock size={14} /> {blogs[0].readTime}</span>
                   <span>{blogs[0].date}</span>
                 </div>
               </div>
@@ -93,18 +93,18 @@ export default function BlogPageClient() {
           </motion.div>
 
           {/* Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="subh-ui-59">
             {blogs.slice(1).map((blog, i) => (
               <motion.div key={blog.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Link href={`/blog/${blog.slug}`} className="group block rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-yellow/20 transition-all">
-                  <div className="relative h-56 overflow-hidden">
-                    <Image src={blog.img} alt={blog.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Link href={`/blog/${blog.slug}`} className="group subh-ui-95">
+                  <div className="subh-ui-96">
+                    <Image src={blog.img} alt={blog.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="group subh-ui-88" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-3 group-hover:text-brand-yellow transition-colors">{blog.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed line-clamp-2">{blog.excerpt}</p>
-                    <div className="flex items-center gap-4 text-gray-500 text-sm">
-                      <span className="flex items-center gap-1"><Clock size={14} /> {blog.readTime}</span>
+                    <h3 className="group subh-ui-97">{blog.title}</h3>
+                    <p className="subh-ui-98">{blog.excerpt}</p>
+                    <div className="subh-ui-93">
+                      <span className="subh-ui-94"><Clock size={14} /> {blog.readTime}</span>
                       <span>{blog.date}</span>
                     </div>
                   </div>

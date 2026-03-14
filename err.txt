@@ -1,0 +1,21 @@
+CssSyntaxError: 
+tailwindcss: C:\Users\A
+SUS\Desktop\Constructio
+n\subh-construction\src
+\app\globals.css:1:1: 
+Cannot apply unknown 
+utility class `text-md`
+    at Input.error (nod
+e_modules/postcss/lib/i
+nput.js:135:16) [C:\Use
+rs\ASUS\Desktop\Constru
+ction\subh-construction
+\.next\build\chunks\nod
+e_modules_fe693df6._.js
+:4651:22]
+    at Root.error (node
+_modules/postcss/lib/no
+de.js:146:32) [C:\Users
+\ASUS\Desktop\Construct
+ion\subh-construction\.
+next\build\chunks\node_

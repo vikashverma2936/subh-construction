@@ -9,9 +9,10 @@ interface SectionHeaderProps {
   description?: string;
   center?: boolean;
   light?: boolean;
+  dark?: boolean;
 }
 
-export default function SectionHeader({ badge, title, highlight, description, center = true, light = false }: SectionHeaderProps) {
+export default function SectionHeader({ badge, title, highlight, description, center = true, light = false, dark = true }: SectionHeaderProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -21,11 +22,11 @@ export default function SectionHeader({ badge, title, highlight, description, ce
       className={`mb-14 ${center ? 'text-center' : ''}`}
     >
       {badge && (
-        <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 text-brand-yellow text-sm font-semibold rounded-full mb-4 border border-brand-yellow/20">
+        <span className="subh-ui-37">
           {badge}
         </span>
       )}
-      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-heading)] leading-tight ${light ? 'text-brand-black dark:text-white' : 'text-brand-black dark:text-white'}`}>
+      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-heading)] leading-tight ${light ? 'text-white' : (dark ? 'text-brand-black dark:text-white' : 'text-brand-black')}`}>
         {title}{' '}
         {highlight && <span className="gradient-text">{highlight}</span>}
       </h2>

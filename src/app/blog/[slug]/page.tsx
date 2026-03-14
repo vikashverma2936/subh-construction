@@ -173,44 +173,44 @@ export default async function BlogPost({ params }: Props) {
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-white dark:bg-brand-black flex items-center justify-center pt-20">
+      <div className="subh-ui-99">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-brand-black dark:text-white mb-4">Post Not Found</h1>
-          <Link href="/blog" className="text-brand-yellow hover:underline">← Back to Blog</Link>
+          <h1 className="subh-ui-100">Post Not Found</h1>
+          <Link href="/blog" className="subh-ui-101">← Back to Blog</Link>
         </div>
       </div>
     );
   }
 
   return (
-    <article className="bg-white dark:bg-brand-black min-h-screen">
+    <article className="subh-ui-102">
       {/* Hero */}
-      <div className="relative h-[400px]">
+      <div className="subh-ui-103">
         <Image src={blog.img} alt={blog.title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-transparent" />
+        <div className="subh-ui-104" />
       </div>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative z-10 pb-24">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-brand-yellow text-sm font-semibold mb-6 hover:gap-3 transition-all">
+      <div className="subh-ui-105">
+        <Link href="/blog" className="subh-ui-106">
           <ArrowLeft size={16} /> Back to Blog
         </Link>
-        <h1 className="text-3xl md:text-5xl font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-6">{blog.title}</h1>
-        <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 text-sm mb-10 pb-10 border-b border-gray-200 dark:border-white/10">
-          <span className="flex items-center gap-1"><User size={14} /> SUBH Construction Team</span>
-          <span className="flex items-center gap-1"><Calendar size={14} /> {blog.date}</span>
-          <span className="flex items-center gap-1"><Clock size={14} /> {blog.readTime}</span>
+        <h1 className="subh-ui-107">{blog.title}</h1>
+        <div className="subh-ui-108">
+          <span className="subh-ui-94"><User size={14} /> SUBH Construction Team</span>
+          <span className="subh-ui-94"><Calendar size={14} /> {blog.date}</span>
+          <span className="subh-ui-94"><Clock size={14} /> {blog.readTime}</span>
         </div>
         <div
-          className="prose prose-invert prose-lg max-w-none prose-headings:font-[family-name:var(--font-heading)] prose-headings:text-brand-yellow prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-strong:text-brand-black dark:text-white prose-a:text-brand-yellow"
+          className="subh-ui-109 prose prose-invert prose-lg max-w-none prose-headings:font-[family-name:var(--font-heading)] prose-headings:text-brand-yellow prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-strong:text-brand-black dark:text-white prose-a:text-brand-yellow"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
         {/* CTA */}
-        <div className="mt-16 p-8 rounded-2xl bg-brand-yellow/10 border border-brand-yellow/20 text-center">
-          <h3 className="text-2xl font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-3">Ready to Start Your Construction Project?</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">Get a free consultation and detailed cost estimate from our expert team.</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-full font-semibold hover:bg-brand-yellow-dark transition-all">
+        <div className="subh-ui-110">
+          <h3 className="subh-ui-111">Ready to Start Your Construction Project?</h3>
+          <p className="subh-ui-112">Get a free consultation and detailed cost estimate from our expert team.</p>
+          <Link href="/contact" className="subh-ui-113">
             Contact Us Today <ArrowLeft size={16} className="rotate-180" />
           </Link>
         </div>

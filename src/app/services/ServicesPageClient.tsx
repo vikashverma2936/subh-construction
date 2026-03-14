@@ -54,48 +54,48 @@ export default function ServicesPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-white dark:bg-brand-black">
-        <div className="absolute inset-0 opacity-10">
+      <section className="subh-ui-40">
+        <div className="subh-ui-223">
           <Image src="/images/hero.png" alt="Construction services" fill className="object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="subh-ui-224" />
+        <div className="subh-ui-43">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6">Our Services</span>
-            <h1 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6">
+            <span className="subh-ui-44">Our Services</span>
+            <h1 className="subh-ui-45">
               Comprehensive <span className="gradient-text">Construction Services</span>
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">From concept to completion — we offer a full range of construction services tailored to your specific needs.</p>
+            <p className="subh-ui-46">From concept to completion — we offer a full range of construction services tailored to your specific needs.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-24 bg-gray-50 dark:bg-brand-dark text-brand-black dark:text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      <section className="subh-ui-53">
+        <div className="subh-ui-235">
           {services.map((service, i) => (
             <motion.div key={service.title} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="w-14 h-14 rounded-xl bg-brand-yellow/10 flex items-center justify-center mb-6">
+                <div className="subh-ui-61">
                   <service.icon size={28} className="text-brand-yellow" />
                 </div>
-                <h2 className="text-3xl font-bold font-[family-name:var(--font-heading)] mb-4">{service.title}</h2>
-                <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6">{service.desc}</p>
-                <ul className="space-y-3 mb-8">
+                <h2 className="subh-ui-236">{service.title}</h2>
+                <p className="subh-ui-55">{service.desc}</p>
+                <ul className="subh-ui-187">
                   {service.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 font-semibold text-sm">
-                      <CheckCircle2 size={16} className="text-brand-yellow shrink-0" /> {b}
+                    <li key={b} className="subh-ui-237">
+                      <CheckCircle2 size={16} className="subh-ui-74" /> {b}
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-brand-black dark:text-white px-6 py-3 rounded-full font-bold hover:bg-white dark:bg-brand-black transition-all hover:scale-105">
+                <Link href="/contact" className="subh-ui-238">
                   Get a Quote <ArrowRight size={16} />
                 </Link>
               </div>
               <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="relative rounded-2xl overflow-hidden h-[400px]">
+                <div className="subh-ui-239">
                   <Image src={service.img} alt={service.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  <div className="subh-ui-240" />
                 </div>
               </div>
             </motion.div>
@@ -104,12 +104,12 @@ export default function ServicesPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-brand-yellow">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="subh-ui-76">
+        <div className="subh-ui-77">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6">Need a Custom Construction Solution?</h2>
-            <p className="text-brand-black/80 font-medium text-lg mb-8">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105">
+            <h2 className="subh-ui-78">Need a Custom Construction Solution?</h2>
+            <p className="subh-ui-79">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
+            <Link href="/contact" className="subh-ui-80">
               Contact Us <ArrowRight size={20} />
             </Link>
           </motion.div>
