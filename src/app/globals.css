@@ -307,7 +307,7 @@ h6 {
   }
 
   .subh-ui-47 {
-    @apply py-16 bg-gray-100 dark:bg-white/5;
+    @apply py-16 bg-white dark:bg-white/5;
   }
 
   .subh-ui-48 {
@@ -315,7 +315,7 @@ h6 {
   }
 
   .subh-ui-49 {
-    @apply text-center p-6 rounded-2xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5;
+    @apply text-center p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5;
   }
 
   .subh-ui-50 {
@@ -331,7 +331,7 @@ h6 {
   }
 
   .subh-ui-53 {
-    @apply py-24 bg-gray-50 dark:bg-brand-dark text-brand-black dark:text-white;
+    @apply py-24 bg-white dark:bg-brand-dark text-brand-black dark:text-white;
   }
 
   .subh-ui-54 {
@@ -351,7 +351,7 @@ h6 {
   }
 
   .subh-ui-58 {
-    @apply py-24 bg-gray-100 dark:bg-white/5;
+    @apply py-24 bg-white dark:bg-white/5;
   }
 
   .subh-ui-59 {
@@ -359,7 +359,7 @@ h6 {
   }
 
   .subh-ui-60 {
-    @apply p-8 rounded-2xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5;
+    @apply p-8 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5;
   }
 
   .subh-ui-61 {
