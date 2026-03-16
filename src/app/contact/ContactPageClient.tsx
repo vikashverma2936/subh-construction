@@ -1,8 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
-import { useState } from 'react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Send, Loader2 } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { toast } from 'sonner';
 
 const contactInfo = [
   { icon: Phone, label: 'Phone', value: '+91 9876543210', href: 'tel:+919876543210' },
@@ -11,34 +14,51 @@ const contactInfo = [
   { icon: Clock, label: 'Hours', value: 'Mon - Sat: 9:00 AM - 7:00 PM', href: undefined },
 ];
 
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  phone: z.string().regex(/^[6-9]\d{9}$/, 'Please enter a valid 10-digit Indian phone number'),
+  email: z.string().email('Please enter a valid email address'),
+  projectType: z.string().min(1, 'Please select a project type'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
 export default function ContactPageClient() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      projectType: '',
+      message: '',
+    },
+  });
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
+  const onSubmit = async (data: ContactFormData) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/leads`, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       });
-      if (response.ok) {
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success('Message sent successfully! We\'ll contact you shortly.');
+        reset();
       } else {
-        setError('Failed to send message. Please try again.');
+        toast.error(result.error || 'Failed to send message. Please try again.');
       }
-    } catch (err) {
-      setError('An error occurred. Please try again later.');
-    } finally {
-      setLoading(false);
+    } catch {
+      toast.error('An error occurred. Please try again later.');
     }
   };
 
@@ -86,39 +106,47 @@ export default function ContactPageClient() {
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="contact-form-title">Send Us a Message</h2>
               <p className="contact-form-subtitle">Fill out the form below and our team will get back to you within 24 hours.</p>
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <div className="contact-fields-grid">
-                  <input type="text" placeholder="Your Name *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="contact-input" />
-                  <input type="email" placeholder="Email Address *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="contact-input" />
-                </div>
-                <div className="contact-fields-grid">
-                  <input type="tel" placeholder="Phone Number *" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="contact-input" />
-                  <div className="relative">
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className={`w-full px-5 py-3.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-brand-yellow/50 focus:ring-1 focus:ring-brand-yellow/30 transition-all font-medium appearance-none ${formData.service === '' ? 'text-gray-400' : 'text-brand-black dark:text-white'}`}
-                    >
-                      <option value="" disabled hidden>Select Service</option>
-                      <option value="residential" className="contact-select-text">Residential Construction</option>
-                      <option value="commercial" className="contact-select-text">Commercial Construction</option>
-                      <option value="renovation" className="contact-select-text">Renovation & Remodeling</option>
-                      <option value="interior" className="contact-select-text">Interior Construction</option>
-                      <option value="infrastructure" className="contact-select-text">Infrastructure Development</option>
-                      <option value="management" className="contact-select-text">Project Management</option>
-                    </select>
-                    {/* Arrow Icon for select */}
-                    <div className="contact-select-icon">
-                      <svg className="contact-select-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                    </div>
+                  <div className="space-y-1">
+                    <input {...register('name')} type="text" placeholder="Your Name *" className={`contact-input ${errors.name ? 'border-red-500' : ''}`} />
+                    {errors.name && <p className="text-xs text-red-500 font-medium ml-1">{errors.name.message}</p>}
+                  </div>
+                  <div className="space-y-1">
+                    <input {...register('email')} type="email" placeholder="Email Address *" className={`contact-input ${errors.email ? 'border-red-500' : ''}`} />
+                    {errors.email && <p className="text-xs text-red-500 font-medium ml-1">{errors.email.message}</p>}
                   </div>
                 </div>
-                <textarea placeholder="Your Message *" required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="contact-textarea" />
-                <button type="submit" disabled={loading} className="contact-submit-btn">
-                  {loading ? <div className="contact-submit-spinner"></div> : <Send size={20} />} {loading ? 'Sending...' : 'Send Message'}
+                <div className="contact-fields-grid">
+                  <div className="space-y-1">
+                    <input {...register('phone')} type="tel" placeholder="Phone Number *" className={`contact-input ${errors.phone ? 'border-red-500' : ''}`} />
+                    {errors.phone && <p className="text-xs text-red-500 font-medium ml-1">{errors.phone.message}</p>}
+                  </div>
+                  <div className="relative space-y-1">
+                    <select
+                      {...register('projectType')}
+                      className={`w-full px-5 py-3.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-brand-yellow/50 focus:ring-1 focus:ring-brand-yellow/30 transition-all font-medium appearance-none ${errors.projectType ? 'border-red-500' : ''}`}
+                    >
+                      <option value="" disabled hidden>Select Project Type</option>
+                      <option value="Residential" className="contact-select-text">Residential Construction</option>
+                      <option value="Commercial" className="contact-select-text">Commercial Construction</option>
+                      <option value="Renovation" className="contact-select-text">Renovation & Remodeling</option>
+                      <option value="Interior" className="contact-select-text">Interior Design</option>
+                      <option value="Industrial" className="contact-select-text">Industrial Projects</option>
+                    </select>
+                    <div className="contact-select-icon pointer-events-none">
+                      <svg className="contact-select-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                    </div>
+                    {errors.projectType && <p className="text-xs text-red-500 font-medium ml-1">{errors.projectType.message}</p>}
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <textarea {...register('message')} placeholder="Your Message *" rows={5} className={`contact-textarea ${errors.message ? 'border-red-500' : ''}`} />
+                  {errors.message && <p className="text-xs text-red-500 font-medium ml-1">{errors.message.message}</p>}
+                </div>
+                <button type="submit" disabled={isSubmitting} className="contact-submit-btn">
+                  {isSubmitting ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />} {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
-                {submitted && <p className="contact-success-msg"><CheckCircle2 size={16} /> Message sent successfully! We&apos;ll contact you shortly.</p>}
-                {error && <p className="contact-error-msg">{error}</p>}
               </form>
 
               {/* WhatsApp */}

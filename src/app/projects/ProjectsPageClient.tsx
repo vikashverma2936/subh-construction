@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -11,13 +12,83 @@ const categories = ['All', 'Residential', 'Commercial', 'Industrial'];
 
 type ProjectType = {
   _id: string;
-  img: string;
+  imageUrl: string;
+  images?: string[];
   title: string;
-  cat: string;
-  loc: string;
-  year: string;
-  desc: string;
+  category: string;
+  location: string;
+  description: string;
 };
+
+function ProjectCarousel({ images }: { images: string[] }) {
+  const [index, setIndex] = useState(0);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative h-full w-full"
+        >
+          <Image
+            src={images[index]}
+            alt="Project image"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="group team-member-photo object-cover"
+          />
+        </motion.div>
+      </AnimatePresence>
+      
+      {images.length > 1 && (
+        <>
+          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIndex(i);
+                }}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === i ? 'bg-brand-yellow w-4' : 'bg-white/50 hover:bg-white'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIndex((prev) => (prev - 1 + images.length) % images.length);
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60 z-20"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIndex((prev) => (prev + 1) % images.length);
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60 z-20"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function ProjectsPageClient() {
   const [filter, setFilter] = useState('All');
@@ -27,9 +98,11 @@ export default function ProjectsPageClient() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/projects`);
-        const data = await response.json();
-        setProjects(data);
+        const response = await fetch('/api/projects');
+        const json = await response.json();
+        if (json.success) {
+          setProjects(json.data);
+        }
         setLoading(false);
       } catch (err) {
         console.error('Failed to fetch projects:', err);
@@ -39,7 +112,7 @@ export default function ProjectsPageClient() {
     fetchProjects();
   }, []);
 
-  const filtered = filter === 'All' ? projects : projects.filter((p) => p.cat === filter);
+  const filtered = filter === 'All' ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <>
@@ -81,23 +154,22 @@ export default function ProjectsPageClient() {
             ) : (
               filtered.map((project, i) => (
                 <motion.div key={project._id || project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} layout className="group gallery-card">
-                <div className="project-card-img-wrap">
-                  <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="group team-member-photo" />
-                  <div className="gallery-card-overlay" />
-                  <div className="project-badge-wrap">
-                    <span className="project-badge">{project.cat}</span>
+                  <div className="project-card-img-wrap">
+                    <ProjectCarousel images={project.images && project.images.length > 0 ? project.images : [project.imageUrl]} />
+                    <div className="project-badge-wrap z-10">
+                      <span className="project-badge">{project.category}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="gallery-card-title">{project.title}</h3>
-                  <p className="gallery-card-desc">{project.desc}</p>
-                  <div className="gallery-card-meta">
-                    <span className="blog-featured-meta-item"><MapPin size={14} /> {project.loc}</span>
-                    <span className="blog-featured-meta-item"><Calendar size={14} /> {project.year}</span>
+                  <div className="p-6">
+                    <h3 className="gallery-card-title">{project.title}</h3>
+                    <p className="gallery-card-desc">{project.description}</p>
+                    <div className="gallery-card-meta">
+                      <span className="blog-featured-meta-item"><MapPin size={14} /> {project.location}</span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            )))}
+                </motion.div>
+              ))
+            )}
           </div>
         </div>
       </section>

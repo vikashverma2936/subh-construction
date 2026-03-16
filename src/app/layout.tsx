@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
+import { Toaster } from 'sonner';
+import AuthProvider from '@/components/AuthProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://subhconstruction.com'),
@@ -47,20 +49,41 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ConstructionBusiness',
   name: 'SUBH Construction',
-  description: 'Premium residential, commercial, and infrastructure construction services across India.',
+  description: 'Leading residential and commercial construction company in Lucknow, Uttar Pradesh. Expert civil contractors.',
   url: 'https://subhconstruction.com',
   logo: 'https://subhconstruction.com/images/logo.png',
+  image: 'https://subhconstruction.com/images/hero.png',
   telephone: '+91-9876543210',
   email: 'info@subhconstruction.com',
+  priceRange: '₹₹₹',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Gomti Nagar',
     addressLocality: 'Lucknow',
     addressRegion: 'Uttar Pradesh',
+    postalCode: '226010',
     addressCountry: 'IN',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '26.8467',
+    longitude: '80.9462',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '19:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Lucknow' },
+    { '@type': 'City', name: 'Noida' },
+    { '@type': 'City', name: 'Delhi' },
+    { '@type': 'City', name: 'Kanpur' },
+  ],
   sameAs: [],
-  foundingDate: '2010',
-  numberOfEmployees: '120+',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -77,13 +100,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppButton />
-          <BackToTop />
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider>
+            <Navbar />
+            <main>{children}</main>
+             <Footer />
+             <Toaster position="top-right" richColors />
+             <WhatsAppButton />
+             <BackToTop />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
