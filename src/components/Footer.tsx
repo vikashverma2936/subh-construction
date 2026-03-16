@@ -31,29 +31,29 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="subh-ui-2">
+    <footer className="footer">
       {/* Main Footer */}
-      <div className="subh-ui-3">
-        <div className="subh-ui-4">
+      <div className="footer-inner">
+        <div className="footer-grid">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link href="/" className="subh-ui-5">
+            <Link href="/" className="footer-brand">
               <Image src="/images/logo.png" alt="SUBH Construction Logo" width={40} height={40} className="rounded" />
               <div>
-                <span className="subh-ui-6">SUBH</span>
-                <span className="subh-ui-7">Construction</span>
+                <span className="footer-brand-name">SUBH</span>
+                <span className="footer-brand-suffix">Construction</span>
               </div>
             </Link>
-            <p className="subh-ui-8">
+            <p className="footer-desc">
               SUBH Construction delivers high-quality residential, commercial, and infrastructure projects across India with 15+ years of excellence.
             </p>
-            <div className="subh-ui-9">
+            <div className="footer-socials">
               {socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="subh-ui-10"
+                  className="footer-social-btn"
                 >
                   <social.icon size={18} />
                 </a>
@@ -63,11 +63,11 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="subh-ui-11">Quick Links</h3>
+            <h3 className="footer-col-heading">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="subh-ui-12">
+                  <Link href={link.href} className="footer-link">
                     {link.label}
                   </Link>
                 </li>
@@ -77,11 +77,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="subh-ui-11">Our Services</h3>
+            <h3 className="footer-col-heading">Our Services</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <Link href="/services" className="subh-ui-12">
+                  <Link href="/services" className="footer-link">
                     {service}
                   </Link>
                 </li>
@@ -91,25 +91,25 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="subh-ui-11">Contact Info</h3>
+            <h3 className="footer-col-heading">Contact Info</h3>
             <ul className="space-y-4">
-              <li className="subh-ui-13">
-                <Phone size={18} className="subh-ui-14" />
+              <li className="footer-contact-row">
+                <Phone size={18} className="footer-contact-icon" />
                 <div>
-                  <p className="subh-ui-15">+91 9876543210</p>
+                  <p className="footer-contact-text">+91 9876543210</p>
                 </div>
               </li>
-              <li className="subh-ui-13">
-                <Mail size={18} className="subh-ui-14" />
+              <li className="footer-contact-row">
+                <Mail size={18} className="footer-contact-icon" />
                 <div>
-                  <a href="mailto:info@subhconstruction.com" className="subh-ui-16">
+                  <a href="mailto:info@subhconstruction.com" className="footer-email-link">
                     info@subhconstruction.com
                   </a>
                 </div>
               </li>
-              <li className="subh-ui-13">
-                <MapPin size={18} className="subh-ui-14" />
-                <p className="subh-ui-15">
+              <li className="footer-contact-row">
+                <MapPin size={18} className="footer-contact-icon" />
+                <p className="footer-contact-text">
                   Lucknow, Uttar Pradesh, India
                 </p>
               </li>
@@ -119,15 +119,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="subh-ui-17">
-        <div className="subh-ui-18">
-          <div className="subh-ui-19">
-            <p className="subh-ui-15">
+      <div className="footer-bottom-border">
+        <div className="footer-bottom-inner">
+          <div className="footer-bottom-row">
+            <p className="footer-contact-text">
               © {new Date().getFullYear()} SUBH Construction. All rights reserved.
             </p>
-            <div className="subh-ui-20">
-              <Link href="#" className="subh-ui-21">Privacy Policy</Link>
-              <Link href="#" className="subh-ui-21">Terms of Service</Link>
+            <div className="footer-bottom-links">
+              <Link href="#" className="footer-bottom-link">Privacy Policy</Link>
+              <Link href="#" className="footer-bottom-link">Terms of Service</Link>
             </div>
           </div>
         </div>

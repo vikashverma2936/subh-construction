@@ -54,48 +54,48 @@ export default function ServicesPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="subh-ui-40">
-        <div className="subh-ui-223">
+      <section className="about-hero">
+        <div className="gallery-hero-bg">
           <Image src="/images/hero.png" alt="Construction services" fill className="object-cover" />
         </div>
-        <div className="subh-ui-224" />
-        <div className="subh-ui-43">
+        <div className="gallery-hero-overlay" />
+        <div className="about-hero-content">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="subh-ui-44">Our Services</span>
-            <h1 className="subh-ui-45">
+            <span className="about-hero-badge">Our Services</span>
+            <h1 className="about-hero-heading">
               Comprehensive <span className="gradient-text">Construction Services</span>
             </h1>
-            <p className="subh-ui-46">From concept to completion — we offer a full range of construction services tailored to your specific needs.</p>
+            <p className="about-hero-subtext">From concept to completion — we offer a full range of construction services tailored to your specific needs.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="subh-ui-53">
-        <div className="subh-ui-235">
+      <section className="intro-section">
+        <div className="gallery-detail-content">
           {services.map((service, i) => (
             <motion.div key={service.title} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="subh-ui-61">
+                <div className="mission-icon-box">
                   <service.icon size={28} className="text-brand-yellow" />
                 </div>
-                <h2 className="subh-ui-236">{service.title}</h2>
-                <p className="subh-ui-55">{service.desc}</p>
-                <ul className="subh-ui-187">
+                <h2 className="gallery-detail-heading">{service.title}</h2>
+                <p className="intro-body-text">{service.desc}</p>
+                <ul className="pricing-features">
                   {service.benefits.map((b) => (
-                    <li key={b} className="subh-ui-237">
-                      <CheckCircle2 size={16} className="subh-ui-74" /> {b}
+                    <li key={b} className="gallery-detail-feature">
+                      <CheckCircle2 size={16} className="achievement-icon" /> {b}
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact" className="subh-ui-238">
+                <Link href="/contact" className="gallery-back-btn">
                   Get a Quote <ArrowRight size={16} />
                 </Link>
               </div>
               <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="subh-ui-239">
+                <div className="gallery-detail-img-wrap">
                   <Image src={service.img} alt={service.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-                  <div className="subh-ui-240" />
+                  <div className="gallery-detail-img-overlay" />
                 </div>
               </div>
             </motion.div>
@@ -104,12 +104,12 @@ export default function ServicesPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="subh-ui-76">
-        <div className="subh-ui-77">
+      <section className="about-cta-section">
+        <div className="about-cta-inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="subh-ui-78">Need a Custom Construction Solution?</h2>
-            <p className="subh-ui-79">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
-            <Link href="/contact" className="subh-ui-80">
+            <h2 className="about-cta-heading">Need a Custom Construction Solution?</h2>
+            <p className="about-cta-text">Contact our team to discuss your specific requirements and get a tailored proposal.</p>
+            <Link href="/contact" className="about-cta-btn">
               Contact Us <ArrowRight size={20} />
             </Link>
           </motion.div>

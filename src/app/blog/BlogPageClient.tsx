@@ -58,34 +58,34 @@ export default function BlogPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="subh-ui-81">
-        <div className="subh-ui-82">
+      <section className="blog-hero">
+        <div className="blog-hero-inner">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="subh-ui-44">Our Blog</span>
-            <h1 className="subh-ui-83">
+            <span className="about-hero-badge">Our Blog</span>
+            <h1 className="blog-hero-heading">
               Construction <span className="gradient-text">Insights</span>
             </h1>
-            <p className="subh-ui-84">Expert articles, guides, and tips on construction, building materials, and home design in India.</p>
+            <p className="blog-hero-subtext">Expert articles, guides, and tips on construction, building materials, and home design in India.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Blog Grid */}
-      <section className="subh-ui-85">
-        <div className="subh-ui-22">
+      <section className="blog-featured-section">
+        <div className="container">
           {/* Featured */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-            <Link href={`/blog/${blogs[0].slug}`} className="group subh-ui-86">
-              <div className="subh-ui-87">
-                <Image src={blogs[0].img} alt={blogs[0].title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="group subh-ui-88" />
+            <Link href={`/blog/${blogs[0].slug}`} className="group blog-featured-card">
+              <div className="blog-featured-img-wrap">
+                <Image src={blogs[0].img} alt={blogs[0].title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="group blog-featured-img" />
               </div>
-              <div className="subh-ui-89">
-                <span className="subh-ui-90">Featured</span>
-                <h2 className="group subh-ui-91">{blogs[0].title}</h2>
-                <p className="subh-ui-92">{blogs[0].excerpt}</p>
-                <div className="subh-ui-93">
-                  <span className="subh-ui-94"><User size={14} /> {blogs[0].author}</span>
-                  <span className="subh-ui-94"><Clock size={14} /> {blogs[0].readTime}</span>
+              <div className="blog-featured-body">
+                <span className="blog-featured-tag">Featured</span>
+                <h2 className="group blog-featured-title">{blogs[0].title}</h2>
+                <p className="blog-featured-excerpt">{blogs[0].excerpt}</p>
+                <div className="blog-featured-meta">
+                  <span className="blog-featured-meta-item"><User size={14} /> {blogs[0].author}</span>
+                  <span className="blog-featured-meta-item"><Clock size={14} /> {blogs[0].readTime}</span>
                   <span>{blogs[0].date}</span>
                 </div>
               </div>
@@ -93,18 +93,18 @@ export default function BlogPageClient() {
           </motion.div>
 
           {/* Grid */}
-          <div className="subh-ui-59">
+          <div className="mission-grid">
             {blogs.slice(1).map((blog, i) => (
               <motion.div key={blog.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Link href={`/blog/${blog.slug}`} className="group subh-ui-95">
-                  <div className="subh-ui-96">
-                    <Image src={blog.img} alt={blog.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="group subh-ui-88" />
+                <Link href={`/blog/${blog.slug}`} className="group blog-card">
+                  <div className="blog-card-img-wrap">
+                    <Image src={blog.img} alt={blog.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="group blog-featured-img" />
                   </div>
                   <div className="p-6">
-                    <h3 className="group subh-ui-97">{blog.title}</h3>
-                    <p className="subh-ui-98">{blog.excerpt}</p>
-                    <div className="subh-ui-93">
-                      <span className="subh-ui-94"><Clock size={14} /> {blog.readTime}</span>
+                    <h3 className="group blog-card-title">{blog.title}</h3>
+                    <p className="blog-card-excerpt">{blog.excerpt}</p>
+                    <div className="blog-featured-meta">
+                      <span className="blog-featured-meta-item"><Clock size={14} /> {blog.readTime}</span>
                       <span>{blog.date}</span>
                     </div>
                   </div>

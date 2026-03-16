@@ -21,7 +21,7 @@ export default function BackToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="subh-ui-1"
+          className="scroll-to-top-btn"
           aria-label="Back to top"
         >
           <ArrowUp size={22} />

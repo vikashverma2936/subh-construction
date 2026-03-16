@@ -44,27 +44,27 @@ export default function ProjectsPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="subh-ui-40">
-        <div className="subh-ui-223">
+      <section className="about-hero">
+        <div className="gallery-hero-bg">
           <Image src="/images/proj-hero.png" alt="Construction projects" fill className="object-cover" />
         </div>
-        <div className="subh-ui-224" />
-        <div className="subh-ui-43">
+        <div className="gallery-hero-overlay" />
+        <div className="about-hero-content">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="subh-ui-44">Our Portfolio</span>
-            <h1 className="subh-ui-45">
+            <span className="about-hero-badge">Our Portfolio</span>
+            <h1 className="about-hero-heading">
               Our <span className="gradient-text">Projects</span>
             </h1>
-            <p className="subh-ui-46">Explore 250+ successfully delivered projects across residential, commercial, and industrial sectors.</p>
+            <p className="about-hero-subtext">Explore 250+ successfully delivered projects across residential, commercial, and industrial sectors.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Filter & Gallery */}
-      <section className="subh-ui-53">
-        <div className="subh-ui-22">
+      <section className="intro-section">
+        <div className="container">
           {/* Filters */}
-          <div className="subh-ui-225">
+          <div className="gallery-filter-bar">
             {categories.map((cat) => (
               <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${filter === cat ? 'bg-white dark:bg-brand-black text-brand-yellow shadow-sm border border-brand-yellow/30' : 'bg-white text-gray-600 dark:bg-white/5 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/10 hover:text-brand-black dark:hover:text-white border border-gray-200 dark:border-white/10'}`}>
                 {cat}
@@ -73,27 +73,27 @@ export default function ProjectsPageClient() {
           </div>
 
           {/* Grid */}
-          <div className="subh-ui-226">
+          <div className="gallery-grid">
             {loading ? (
-              <div className="subh-ui-227"><div className="subh-ui-228"></div></div>
+              <div className="gallery-loading-wrap"><div className="gallery-spinner"></div></div>
             ) : filtered.length === 0 ? (
-              <div className="subh-ui-229">No projects found.</div>
+              <div className="gallery-empty">No projects found.</div>
             ) : (
               filtered.map((project, i) => (
-                <motion.div key={project._id || project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} layout className="group subh-ui-230">
-                <div className="subh-ui-168">
-                  <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="group subh-ui-68" />
-                  <div className="subh-ui-231" />
-                  <div className="subh-ui-169">
-                    <span className="subh-ui-170">{project.cat}</span>
+                <motion.div key={project._id || project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} layout className="group gallery-card">
+                <div className="project-card-img-wrap">
+                  <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="group team-member-photo" />
+                  <div className="gallery-card-overlay" />
+                  <div className="project-badge-wrap">
+                    <span className="project-badge">{project.cat}</span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="subh-ui-232">{project.title}</h3>
-                  <p className="subh-ui-233">{project.desc}</p>
-                  <div className="subh-ui-234">
-                    <span className="subh-ui-94"><MapPin size={14} /> {project.loc}</span>
-                    <span className="subh-ui-94"><Calendar size={14} /> {project.year}</span>
+                  <h3 className="gallery-card-title">{project.title}</h3>
+                  <p className="gallery-card-desc">{project.desc}</p>
+                  <div className="gallery-card-meta">
+                    <span className="blog-featured-meta-item"><MapPin size={14} /> {project.loc}</span>
+                    <span className="blog-featured-meta-item"><Calendar size={14} /> {project.year}</span>
                   </div>
                 </div>
               </motion.div>
@@ -103,12 +103,12 @@ export default function ProjectsPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="subh-ui-76">
-        <div className="subh-ui-77">
+      <section className="about-cta-section">
+        <div className="about-cta-inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="subh-ui-78">Have a Project in Mind?</h2>
-            <p className="subh-ui-79">Let&apos;s discuss how we can bring your construction vision to life.</p>
-            <Link href="/contact" className="subh-ui-80">
+            <h2 className="about-cta-heading">Have a Project in Mind?</h2>
+            <p className="about-cta-text">Let&apos;s discuss how we can bring your construction vision to life.</p>
+            <Link href="/contact" className="about-cta-btn">
               Start a Project <ArrowRight size={20} />
             </Link>
           </motion.div>

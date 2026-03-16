@@ -118,967 +118,994 @@ h6 {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* --- Extracted Semantic Classes --- */
+/* ============================================================
+   SUBH CONSTRUCTION — COMPONENT STYLES
+   ============================================================
+   All classes use semantic names grouped by section:
+     footer-*        → Footer component
+     navbar-*        → Navigation bar
+     hero-*          → Home page hero section
+     intro-*         → Home introduction / about snippet
+     services-*      → Services overview section
+     service-*       → Individual service card
+     project-*       → Project card styles
+     projects-*      → Projects section wrapper
+     stats-*         → Stats / counters bar
+     why-*           → Why Choose Us section
+     review-*        → Client testimonials
+     faq-*           → FAQ accordion
+     contact-*       → Contact page
+     about-*         → About page sections
+     intro-section   → About story / home introduction dark section
+     mission-*       → Mission & vision section
+     team-*          → Team section (also used by services overview)
+     blog-*          → Blog page
+     pricing-*       → Pricing section
+     gallery-*       → Projects / gallery page
+     svc-*           → Services detail page
+     section-badge   → Reusable badge label above headings
+     container       → Max-width centered wrapper
+   ============================================================ */
 
 @layer components {
-  .subh-ui-1 {
+  .scroll-to-top-btn {
     @apply fixed bottom-6 left-6 z-50 w-12 h-12 bg-brand-yellow text-brand-black rounded-full flex items-center justify-center shadow-lg hover:bg-brand-yellow-dark hover:scale-110 transition-all duration-200;
   }
 
-  .subh-ui-2 {
+  .footer {
     @apply bg-brand-steel text-white border-t border-white/10;
   }
 
-  .subh-ui-3 {
+  .footer-inner {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
   }
 
-  .subh-ui-4 {
+  .footer-grid {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12;
   }
 
-  .subh-ui-5 {
+  .footer-brand {
     @apply flex items-center gap-3;
   }
 
-  .subh-ui-6 {
+  .footer-brand-name {
     @apply text-lg font-bold font-[family-name:var(--font-heading)] text-brand-yellow;
   }
 
-  .subh-ui-7 {
+  .footer-brand-suffix {
     @apply text-lg font-bold font-[family-name:var(--font-heading)] text-white ml-1;
   }
 
-  .subh-ui-8 {
+  .footer-desc {
     @apply text-brand-gray text-sm leading-relaxed;
   }
 
-  .subh-ui-9 {
+  .footer-socials {
     @apply flex gap-3;
   }
 
-  .subh-ui-10 {
+  .footer-social-btn {
     @apply w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-gray hover:bg-brand-yellow hover:text-brand-black transition-all duration-200;
   }
 
-  .subh-ui-11 {
+  .footer-col-heading {
     @apply text-white font-semibold font-[family-name:var(--font-heading)] text-lg mb-6;
   }
 
-  .subh-ui-12 {
+  .footer-link {
     @apply text-brand-gray hover:text-brand-yellow transition-colors text-sm;
   }
 
-  .subh-ui-13 {
+  .footer-contact-row {
     @apply flex items-start gap-3;
   }
 
-  .subh-ui-14 {
+  .footer-contact-icon {
     @apply text-brand-yellow mt-0.5 shrink-0;
   }
 
-  .subh-ui-15 {
+  .footer-contact-text {
     @apply text-brand-gray text-sm;
   }
 
-  .subh-ui-16 {
+  .footer-email-link {
     @apply text-brand-gray hover:text-brand-yellow text-sm transition-colors;
   }
 
-  .subh-ui-17 {
+  .footer-bottom-border {
     @apply border-t border-white/10;
   }
 
-  .subh-ui-18 {
+  .footer-bottom-inner {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
   }
 
-  .subh-ui-19 {
+  .footer-bottom-row {
     @apply flex flex-col md:flex-row items-center justify-between gap-4;
   }
 
-  .subh-ui-20 {
+  .footer-bottom-links {
     @apply flex gap-6;
   }
 
-  .subh-ui-21 {
+  .footer-bottom-link {
     @apply text-brand-white hover:text-brand-yellow text-sm transition-colors;
   }
 
-  .subh-ui-22 {
+  .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .subh-ui-23 {
+  .navbar-inner {
     @apply flex items-center justify-between h-20;
   }
 
-  .subh-ui-24 {
+  .navbar-brand-name {
     @apply text-xl font-bold font-[family-name:var(--font-heading)] text-brand-yellow;
   }
 
-  .subh-ui-25 {
+  .navbar-brand-suffix {
     @apply text-xl font-bold font-[family-name:var(--font-heading)] text-white ml-1;
   }
 
-  .subh-ui-26 {
+  .navbar-links {
     @apply hidden lg:flex items-center gap-1;
   }
 
-  .subh-ui-27 {
+  .navbar-link {
     @apply px-4 py-2 text-sm font-medium text-white/90 hover:text-brand-yellow transition-colors duration-200 rounded-lg hover:bg-white/10;
   }
 
-  .subh-ui-28 {
+  .navbar-actions {
     @apply hidden lg:flex items-center gap-3;
   }
 
-  .subh-ui-29 {
+  .navbar-theme-toggle {
     @apply p-2 rounded-full text-white/80 hover:text-brand-yellow hover:bg-white/10 transition-all;
   }
 
-  .subh-ui-30 {
+  .navbar-cta-btn {
     @apply flex items-center gap-2 bg-brand-yellow text-brand-black px-5 py-2.5 rounded-full font-bold text-sm hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25;
   }
 
-  .subh-ui-31 {
+  .navbar-mobile-actions {
     @apply lg:hidden flex items-center gap-2;
   }
 
-  .subh-ui-32 {
+  .navbar-mobile-hamburger {
     @apply p-2 text-white;
   }
 
-  .subh-ui-33 {
+  .navbar-mobile-menu {
     @apply lg:hidden bg-brand-blue/98 backdrop-blur-xl border-t border-white/10;
   }
 
-  .subh-ui-34 {
+  .navbar-mobile-links {
     @apply px-4 py-6 space-y-1;
   }
 
-  .subh-ui-35 {
+  .navbar-mobile-link {
     @apply block px-4 py-3 text-white/90 hover:text-brand-yellow hover:bg-white/10 rounded-lg transition-all font-medium;
   }
 
-  .subh-ui-36 {
+  .navbar-mobile-cta-btn {
     @apply flex items-center justify-center gap-2 bg-brand-yellow text-brand-black px-5 py-3 rounded-full font-bold hover:bg-brand-yellow-dark transition-all;
   }
 
-  .subh-ui-37 {
+  .section-badge {
     @apply inline-block px-4 py-1.5 bg-brand-yellow/10 text-brand-yellow text-sm font-semibold rounded-full mb-4 border border-brand-yellow/20;
   }
 
-  .subh-ui-38 {
+  .whatsapp-btn {
     @apply fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-600 hover:scale-110 transition-all duration-200;
     animation: pulse-glow 2s ease-in-out infinite;
   }
 
-  .subh-ui-39 {
+  .theme-root {
     @apply text-brand-black dark:text-white;
   }
 
-  .subh-ui-40 {
+  .about-hero {
     @apply relative pt-32 pb-20 bg-white dark:bg-brand-black;
   }
 
-  .subh-ui-41 {
+  .about-hero-bg-img {
     @apply absolute inset-0 opacity-20;
   }
 
-  .subh-ui-42 {
+  .about-hero-overlay {
     @apply absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black;
   }
 
-  .subh-ui-43 {
+  .about-hero-content {
     @apply relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
   }
 
-  .subh-ui-44 {
+  .about-hero-badge {
     @apply inline-block px-4 py-1.5 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-sm font-semibold rounded-full mb-6;
   }
 
-  .subh-ui-45 {
+  .about-hero-heading {
     @apply text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-brand-black dark:text-white mb-6;
   }
 
-  .subh-ui-46 {
+  .about-hero-subtext {
     @apply text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto;
   }
 
-  .subh-ui-47 {
+  .about-stats-section {
     @apply py-16 bg-white dark:bg-white/5;
   }
 
-  .subh-ui-48 {
+  .about-stats-grid {
     @apply grid grid-cols-2 lg:grid-cols-4 gap-8;
   }
 
-  .subh-ui-49 {
+  .about-stat-card {
     @apply text-center p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5;
   }
 
-  .subh-ui-50 {
+  .about-stat-icon {
     @apply text-brand-yellow mx-auto mb-4;
   }
 
-  .subh-ui-51 {
+  .about-stat-value {
     @apply text-4xl font-bold text-brand-yellow font-[family-name:var(--font-heading)];
   }
 
-  .subh-ui-52 {
+  .about-stat-label {
     @apply text-gray-600 dark:text-gray-400 text-sm mt-2;
   }
 
-  .subh-ui-53 {
+  .intro-section {
     @apply py-24 bg-white dark:bg-brand-dark text-brand-black dark:text-white;
   }
 
-  .subh-ui-54 {
+  .intro-grid {
     @apply grid lg:grid-cols-2 gap-16 items-center;
   }
 
-  .subh-ui-55 {
+  .intro-body-text {
     @apply text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6;
   }
 
-  .subh-ui-56 {
+  .intro-body-text-last {
     @apply text-gray-600 dark:text-gray-400 font-medium leading-relaxed;
   }
 
-  .subh-ui-57 {
+  .intro-image {
     @apply rounded-2xl object-cover w-full h-[450px];
   }
 
-  .subh-ui-58 {
+  .mission-section {
     @apply py-24 bg-white dark:bg-white/5;
   }
 
-  .subh-ui-59 {
+  .mission-grid {
     @apply grid md:grid-cols-2 gap-8;
   }
 
-  .subh-ui-60 {
+  .mission-card {
     @apply p-8 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5;
   }
 
-  .subh-ui-61 {
+  .mission-icon-box {
     @apply w-14 h-14 rounded-xl bg-brand-yellow/10 flex items-center justify-center mb-6;
   }
 
-  .subh-ui-62 {
+  .mission-card-heading {
     @apply text-2xl font-bold text-brand-black dark:text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-4;
   }
 
-  .subh-ui-63 {
+  .mission-card-text {
     @apply text-gray-600 dark:text-gray-400 leading-relaxed;
   }
 
-  .subh-ui-64 {
+  .team-section {
     @apply py-24 bg-white dark:bg-brand-black;
   }
 
-  .subh-ui-65 {
+  .team-grid {
     @apply grid sm:grid-cols-2 lg:grid-cols-4 gap-8;
   }
 
-  .subh-ui-66 {
+  .team-member {
     @apply text-center;
   }
 
-  .subh-ui-67 {
+  .team-member-photo-wrap {
     @apply relative w-full h-72 rounded-2xl overflow-hidden mb-4;
   }
 
-  .subh-ui-68 {
+  .team-member-photo {
     @apply object-cover group-hover:scale-110 transition-transform duration-500;
   }
 
-  .subh-ui-69 {
+  .team-member-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
   }
 
-  .subh-ui-70 {
+  .team-member-name {
     @apply text-brand-black dark:text-white font-semibold font-[family-name:var(--font-heading)] text-lg;
   }
 
-  .subh-ui-71 {
+  .team-member-role {
     @apply text-brand-yellow text-sm;
   }
 
-  .subh-ui-72 {
+  .achievements-grid {
     @apply grid md:grid-cols-2 gap-4 max-w-4xl mx-auto;
   }
 
-  .subh-ui-73 {
+  .achievement-item {
     @apply flex items-center gap-3 p-5 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5;
   }
 
-  .subh-ui-74 {
+  .achievement-icon {
     @apply text-brand-yellow shrink-0;
   }
 
-  .subh-ui-75 {
+  .achievement-text {
     @apply text-gray-700 dark:text-gray-300 text-sm;
   }
 
-  .subh-ui-76 {
+  .about-cta-section {
     @apply py-20 bg-brand-yellow;
   }
 
-  .subh-ui-77 {
+  .about-cta-inner {
     @apply max-w-4xl mx-auto px-4 text-center;
   }
 
-  .subh-ui-78 {
+  .about-cta-heading {
     @apply text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-black mb-6;
   }
 
-  .subh-ui-79 {
+  .about-cta-text {
     @apply text-brand-black/80 font-medium text-lg mb-8;
   }
 
-  .subh-ui-80 {
+  .about-cta-btn {
     @apply inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:scale-105;
   }
 
-  .subh-ui-81 {
+  .blog-hero {
     @apply pt-32 pb-20 bg-brand-black;
   }
 
-  .subh-ui-82 {
+  .blog-hero-inner {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
   }
 
-  .subh-ui-83 {
+  .blog-hero-heading {
     @apply text-4xl md:text-6xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white mb-6;
   }
 
-  .subh-ui-84 {
+  .blog-hero-subtext {
     @apply text-gray-400 text-lg max-w-2xl mx-auto;
   }
 
-  .subh-ui-85 {
+  .blog-featured-section {
     @apply py-24 bg-gray-50 dark:bg-brand-dark;
   }
 
-  .subh-ui-86 {
+  .blog-featured-card {
     @apply grid lg:grid-cols-2 gap-8 rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-yellow/20 transition-all;
   }
 
-  .subh-ui-87 {
+  .blog-featured-img-wrap {
     @apply relative h-72 lg:h-full overflow-hidden;
   }
 
-  .subh-ui-88 {
+  .blog-featured-img {
     @apply object-cover group-hover:scale-105 transition-transform duration-500;
   }
 
-  .subh-ui-89 {
+  .blog-featured-body {
     @apply p-8 flex flex-col justify-center;
   }
 
-  .subh-ui-90 {
+  .blog-featured-tag {
     @apply inline-block px-3 py-1 bg-brand-yellow/10 text-brand-yellow text-xs font-semibold rounded-full w-fit mb-4;
   }
 
-  .subh-ui-91 {
+  .blog-featured-title {
     @apply text-2xl md:text-3xl font-bold text-brand-black dark:text-brand-black dark:text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-4 group-hover:text-brand-yellow transition-colors;
   }
 
-  .subh-ui-92 {
+  .blog-featured-excerpt {
     @apply text-gray-600 dark:text-gray-400 mb-6 leading-relaxed;
   }
 
-  .subh-ui-93 {
+  .blog-featured-meta {
     @apply flex items-center gap-4 text-gray-500 text-sm;
   }
 
-  .subh-ui-94 {
+  .blog-featured-meta-item {
     @apply flex items-center gap-1;
   }
 
-  .subh-ui-95 {
+  .blog-card {
     @apply block rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-yellow/20 transition-all;
   }
 
-  .subh-ui-96 {
+  .blog-card-img-wrap {
     @apply relative h-56 overflow-hidden;
   }
 
-  .subh-ui-97 {
+  .blog-card-title {
     @apply text-lg font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-3 group-hover:text-brand-yellow transition-colors;
   }
 
-  .subh-ui-98 {
+  .blog-card-excerpt {
     @apply text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed line-clamp-2;
   }
 
-  .subh-ui-99 {
+  .blog-not-found {
     @apply min-h-screen bg-white dark:bg-brand-black flex items-center justify-center pt-20;
   }
 
-  .subh-ui-100 {
+  .blog-not-found-heading {
     @apply text-4xl font-bold text-brand-black dark:text-brand-black dark:text-white mb-4;
   }
 
-  .subh-ui-101 {
+  .blog-not-found-link {
     @apply text-brand-yellow hover:underline;
   }
 
-  .subh-ui-102 {
+  .contact-page {
     @apply bg-white dark:bg-brand-black min-h-screen;
   }
 
-  .subh-ui-103 {
+  .contact-hero-img-wrap {
     @apply relative h-[400px];
   }
 
-  .subh-ui-104 {
+  .contact-hero-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-transparent;
   }
 
-  .subh-ui-105 {
+  .contact-form-wrap {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative z-10 pb-24;
   }
 
-  .subh-ui-106 {
+  .contact-back-link {
     @apply inline-flex items-center gap-2 text-brand-yellow text-sm font-semibold mb-6 hover:gap-3 transition-all;
   }
 
-  .subh-ui-107 {
+  .contact-form-heading {
     @apply text-3xl md:text-5xl font-bold text-brand-black dark:text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-6;
   }
 
-  .subh-ui-108 {
+  .contact-form-meta {
     @apply flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 text-sm mb-10 pb-10 border-b border-gray-200 dark:border-white/10;
   }
 
-  .subh-ui-109 {
+  .contact-form-meta-item {
     @apply block;
   }
 
-  .subh-ui-110 {
+  .contact-cta-box {
     @apply mt-16 p-8 rounded-2xl bg-brand-yellow/10 border border-brand-yellow/20 text-center;
   }
 
-  .subh-ui-111 {
+  .contact-cta-heading {
     @apply text-2xl font-bold text-brand-black dark:text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-3;
   }
 
-  .subh-ui-112 {
+  .contact-cta-text {
     @apply text-gray-600 dark:text-gray-400 mb-6;
   }
 
-  .subh-ui-113 {
+  .contact-cta-btn {
     @apply inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-full font-semibold hover:bg-brand-yellow-dark transition-all;
   }
 
-  .subh-ui-114 {
+  .contact-hero-subtext {
     @apply text-gray-200 text-lg max-w-2xl mx-auto font-light;
   }
 
-  .subh-ui-115 {
+  .contact-info-section {
     @apply py-16 bg-gray-50 dark:bg-brand-dark;
   }
 
-  .subh-ui-116 {
+  .contact-info-grid {
     @apply grid sm:grid-cols-2 lg:grid-cols-4 gap-6;
   }
 
-  .subh-ui-117 {
+  .contact-info-card {
     @apply p-6 rounded-2xl bg-brand-yellow text-brand-black border border-brand-yellow-dark/20 text-center hover:shadow-xl hover:scale-105 transition-all duration-300;
   }
 
-  .subh-ui-118 {
+  .contact-info-icon-box {
     @apply w-14 h-14 rounded-xl bg-brand-black/10 flex items-center justify-center mx-auto mb-4 border border-brand-black/5;
   }
 
-  .subh-ui-119 {
+  .contact-info-label {
     @apply text-brand-black font-bold mb-1;
   }
 
-  .subh-ui-120 {
+  .contact-info-value-link {
     @apply text-brand-black/80 font-medium text-sm hover:text-brand-black transition-colors;
   }
 
-  .subh-ui-121 {
+  .contact-info-value {
     @apply text-brand-black/80 font-medium text-sm;
   }
 
-  .subh-ui-122 {
+  .contact-content-grid {
     @apply grid lg:grid-cols-2 gap-12;
   }
 
-  .subh-ui-123 {
+  .contact-form-title {
     @apply text-3xl font-bold text-brand-black dark:text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-2;
   }
 
-  .subh-ui-124 {
+  .contact-form-subtitle {
     @apply text-gray-700 dark:text-gray-300 font-medium mb-8;
   }
 
-  .subh-ui-125 {
+  .contact-fields-grid {
     @apply grid sm:grid-cols-2 gap-5;
   }
 
-  .subh-ui-126 {
+  .contact-input {
     @apply w-full px-5 py-3.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-brand-black dark:text-white placeholder-gray-400 focus:outline-none focus:border-brand-yellow/50 focus:ring-1 focus:ring-brand-yellow/30 transition-all font-medium;
   }
 
-  .subh-ui-127 {
+  .contact-select-text {
     @apply text-gray-900 bg-white;
   }
 
-  .subh-ui-128 {
+  .contact-select-icon {
     @apply pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-600 dark:text-gray-400;
   }
 
-  .subh-ui-129 {
+  .contact-select-chevron {
     @apply fill-current h-4 w-4;
   }
 
-  .subh-ui-130 {
+  .contact-textarea {
     @apply w-full px-5 py-3.5 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-brand-black dark:text-white placeholder-gray-400 focus:outline-none focus:border-brand-yellow/50 focus:ring-1 focus:ring-brand-yellow/30 transition-all resize-none font-medium;
   }
 
-  .subh-ui-131 {
+  .contact-submit-btn {
     @apply inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-yellow-dark transition-all hover:scale-105 w-full justify-center sm:w-auto mt-2 disabled:opacity-70 disabled:hover:scale-100;
   }
 
-  .subh-ui-132 {
+  .contact-submit-spinner {
     @apply w-5 h-5 border-2 border-brand-black border-t-transparent rounded-full animate-spin;
   }
 
-  .subh-ui-133 {
+  .contact-success-msg {
     @apply text-brand-yellow font-medium text-sm mt-3 flex items-center gap-2;
   }
 
-  .subh-ui-134 {
+  .contact-error-msg {
     @apply text-red-500 font-medium text-sm mt-3;
   }
 
-  .subh-ui-135 {
+  .contact-whatsapp-row {
     @apply mt-8 p-4 rounded-xl bg-green-100 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 flex items-center gap-4 hover:bg-green-200 dark:hover:bg-green-500/30 transition-all cursor-pointer;
   }
 
-  .subh-ui-136 {
+  .contact-whatsapp-icon {
     @apply text-green-600 dark:text-green-400;
   }
 
-  .subh-ui-137 {
+  .contact-whatsapp-heading {
     @apply text-brand-black dark:text-white text-base font-bold;
   }
 
-  .subh-ui-138 {
+  .contact-whatsapp-link {
     @apply text-green-700 dark:text-green-300 text-sm font-medium hover:underline;
   }
 
-  .subh-ui-139 {
+  .contact-map {
     @apply rounded-2xl overflow-hidden h-full min-h-[500px];
   }
 
-  .subh-ui-140 {
+  .hero-section {
     @apply relative min-h-screen flex items-center justify-center overflow-hidden;
   }
 
-  .subh-ui-141 {
+  .hero-overlay {
     @apply absolute inset-0 bg-brand-steel/75;
   }
 
-  .subh-ui-142 {
+  .hero-content {
     @apply relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32;
   }
 
-  .subh-ui-143 {
+  .hero-heading {
     @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-[family-name:var(--font-heading)] text-brand-black dark:text-white leading-tight;
   }
 
-  .subh-ui-144 {
+  .hero-subtext {
     @apply mt-6 text-lg md:text-xl text-brand-light max-w-2xl leading-relaxed font-light;
   }
 
-  .subh-ui-145 {
+  .hero-cta-group {
     @apply mt-10 flex flex-wrap gap-4;
   }
 
-  .subh-ui-146 {
+  .hero-primary-btn {
     @apply inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-yellow-dark transition-all duration-200 hover:shadow-lg hover:shadow-brand-yellow/25 hover:scale-105;
   }
 
-  .subh-ui-147 {
+  .hero-secondary-btn {
     @apply inline-flex items-center gap-2 bg-brand-steel text-white border-2 border-brand-steel px-8 py-4 rounded-full font-bold text-lg hover:bg-transparent hover:text-brand-black dark:text-white hover:border-white transition-all duration-300;
   }
 
-  .subh-ui-148 {
+  .intro-badge {
     @apply inline-block px-4 py-1.5 bg-white/10 text-gray-600 dark:text-gray-400 text-sm font-bold rounded-full mb-4 border border-white/20;
   }
 
-  .subh-ui-149 {
+  .intro-heading {
     @apply text-3xl md:text-4xl font-bold font-[family-name:var(--font-heading)] mb-6 text-brand-blue;
   }
 
-  .subh-ui-150 {
+  .intro-desc {
     @apply text-brand-gray leading-relaxed mb-6 font-medium;
   }
 
-  .subh-ui-151 {
+  .intro-features-grid {
     @apply grid grid-cols-2 gap-4;
   }
 
-  .subh-ui-152 {
+  .intro-feature-item {
     @apply flex items-center gap-3 text-brand-blue font-semibold;
   }
 
-  .subh-ui-153 {
+  .intro-learn-more {
     @apply inline-flex items-center gap-2 mt-8 text-brand-blue font-bold hover:gap-4 hover:text-brand-yellow-dark transition-all;
   }
 
-  .subh-ui-154 {
+  .intro-img-wrap {
     @apply relative rounded-2xl overflow-hidden shadow-2xl;
   }
 
-  .subh-ui-155 {
+  .intro-img {
     @apply object-cover rounded-2xl;
   }
 
-  .subh-ui-156 {
+  .intro-exp-badge {
     @apply absolute -bottom-6 -left-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-yellow;
   }
 
-  .subh-ui-157 {
+  .intro-exp-number {
     @apply text-4xl font-bold font-[family-name:var(--font-heading)] text-brand-yellow;
   }
 
-  .subh-ui-158 {
+  .intro-exp-label {
     @apply text-sm font-semibold;
   }
 
-  .subh-ui-159 {
+  .services-grid {
     @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
   }
 
-  .subh-ui-160 {
+  .service-card {
     @apply p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-brand-yellow transition-all duration-300;
   }
 
-  .subh-ui-161 {
+  .service-icon-box {
     @apply w-14 h-14 rounded-xl bg-brand-blue flex items-center justify-center mb-6 group-hover:bg-brand-steel transition-colors;
   }
 
-  .subh-ui-162 {
+  .service-title {
     @apply text-xl font-bold text-brand-blue mb-3 font-[family-name:var(--font-heading)];
   }
 
-  .subh-ui-163 {
+  .service-desc {
     @apply text-brand-gray text-sm leading-relaxed mb-4;
   }
 
-  .subh-ui-164 {
+  .service-link {
     @apply inline-flex items-center gap-1 text-brand-blue font-semibold hover:text-brand-yellow transition-all;
   }
 
-  .subh-ui-165 {
+  .projects-section {
     @apply py-24 bg-brand-light;
   }
 
-  .subh-ui-166 {
+  .projects-grid {
     @apply grid md:grid-cols-2 lg:grid-cols-4 gap-6;
   }
 
-  .subh-ui-167 {
+  .project-card {
     @apply rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-brand-yellow hover:shadow-xl transition-all duration-300;
   }
 
-  .subh-ui-168 {
+  .project-card-img-wrap {
     @apply relative h-64 overflow-hidden;
   }
 
-  .subh-ui-169 {
+  .project-badge-wrap {
     @apply absolute top-4 left-4;
   }
 
-  .subh-ui-170 {
+  .project-badge {
     @apply px-3 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full;
   }
 
-  .subh-ui-171 {
+  .project-card-title {
     @apply text-base font-bold text-brand-blue font-[family-name:var(--font-heading)] leading-snug;
   }
 
-  .subh-ui-172 {
+  .project-card-location {
     @apply text-brand-gray text-xs mt-2 flex items-center gap-1;
   }
 
-  .subh-ui-173 {
+  .projects-view-all-wrap {
     @apply text-center mt-12;
   }
 
-  .subh-ui-174 {
+  .projects-view-all-btn {
     @apply inline-flex items-center gap-2 border-2 border-brand-yellow text-brand-yellow px-8 py-3 rounded-full font-semibold hover:bg-brand-yellow hover:text-brand-black transition-all duration-300;
   }
 
-  .subh-ui-175 {
+  .stats-section {
     @apply bg-brand-blue py-16;
   }
 
-  .subh-ui-176 {
+  .stats-grid {
     @apply grid grid-cols-2 md:grid-cols-4 gap-8 text-center;
   }
 
-  .subh-ui-177 {
+  .stat-number {
     @apply text-4xl md:text-5xl font-bold text-brand-yellow font-[family-name:var(--font-heading)] mb-2;
   }
 
-  .subh-ui-178 {
+  .stat-label {
     @apply text-sm md:text-base text-white/90 font-medium;
   }
 
-  .subh-ui-179 {
+  .why-section {
     @apply py-24 bg-brand-black;
   }
 
-  .subh-ui-180 {
+  .why-card {
     @apply flex flex-col items-start gap-4 p-8 rounded-2xl bg-brand-light border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-lg transition-all duration-300;
   }
 
-  .subh-ui-181 {
+  .why-icon-box {
     @apply w-14 h-14 rounded-xl bg-brand-blue flex items-center justify-center shrink-0;
   }
 
-  .subh-ui-182 {
+  .why-card-title {
     @apply text-xl font-bold text-brand-blue font-[family-name:var(--font-heading)] mb-2;
   }
 
-  .subh-ui-183 {
+  .pricing-popular-tag {
     @apply absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full;
   }
 
-  .subh-ui-184 {
+  .pricing-plan-name {
     @apply text-xl font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)];
   }
 
-  .subh-ui-185 {
+  .pricing-price-wrap {
     @apply mt-4 mb-6;
   }
 
-  .subh-ui-186 {
+  .pricing-plan-desc {
     @apply text-gray-600 dark:text-gray-400 text-sm;
   }
 
-  .subh-ui-187 {
+  .pricing-features {
     @apply space-y-3 mb-8;
   }
 
-  .subh-ui-188 {
+  .pricing-feature-item {
     @apply flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm;
   }
 
-  .subh-ui-189 {
+  .reviews-grid {
     @apply grid md:grid-cols-2 gap-6;
   }
 
-  .subh-ui-190 {
+  .review-card {
     @apply p-8 rounded-2xl bg-brand-light text-brand-black border border-gray-200 shadow-sm transition-all;
   }
 
-  .subh-ui-191 {
+  .review-stars {
     @apply flex gap-1 mb-4;
   }
 
-  .subh-ui-192 {
+  .review-star-icon {
     @apply text-brand-yellow fill-brand-yellow;
   }
 
-  .subh-ui-193 {
+  .review-quote {
     @apply text-brand-gray mb-6 leading-relaxed italic;
   }
 
-  .subh-ui-194 {
+  .review-author-name {
     @apply font-bold text-brand-blue;
   }
 
-  .subh-ui-195 {
+  .review-author-role {
     @apply text-sm font-medium text-brand-gray;
   }
 
-  .subh-ui-196 {
+  .faq-container {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .subh-ui-197 {
+  .faq-item {
     @apply rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden;
   }
 
-  .subh-ui-198 {
+  .faq-toggle-btn {
     @apply w-full flex items-center justify-between p-6 text-left hover:bg-gray-100 dark:bg-white/5 transition-colors;
   }
 
-  .subh-ui-199 {
+  .faq-question {
     @apply text-brand-black dark:text-white font-semibold pr-4;
   }
 
-  .subh-ui-200 {
+  .faq-chevron {
     @apply text-gray-600 dark:text-gray-400 shrink-0;
   }
 
-  .subh-ui-201 {
+  .faq-answer {
     @apply px-6 pb-6;
   }
 
-  .subh-ui-202 {
+  .svc-quote-heading {
     @apply text-2xl font-bold font-[family-name:var(--font-heading)] text-brand-blue mb-6;
   }
 
-  .subh-ui-203 {
+  .svc-quote-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6;
   }
 
-  .subh-ui-204 {
+  .svc-quote-label {
     @apply block text-sm font-medium text-brand-gray mb-2;
   }
 
-  .subh-ui-205 {
+  .svc-quote-input {
     @apply w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow outline-none transition-all;
   }
 
-  .subh-ui-206 {
+  .svc-quote-select {
     @apply w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow outline-none transition-all text-brand-gray;
   }
 
-  .subh-ui-207 {
+  .svc-quote-submit {
     @apply w-full bg-brand-yellow text-brand-black font-bold py-4 rounded-lg hover:bg-brand-yellow-dark hover:shadow-lg transition-all;
   }
 
-  .subh-ui-208 {
+  .svc-sidebar {
     @apply bg-brand-light p-8 rounded-2xl border border-gray-100;
   }
 
-  .subh-ui-209 {
+  .svc-sidebar-heading {
     @apply text-xl font-bold font-[family-name:var(--font-heading)] text-brand-blue mb-6;
   }
 
-  .subh-ui-210 {
+  .svc-contact-row {
     @apply flex items-start gap-4;
   }
 
-  .subh-ui-211 {
+  .svc-contact-icon-box {
     @apply w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0;
   }
 
-  .subh-ui-212 {
+  .svc-contact-label {
     @apply text-sm font-semibold text-brand-gray;
   }
 
-  .subh-ui-213 {
+  .svc-contact-value {
     @apply text-brand-blue font-semibold;
   }
 
-  .subh-ui-214 {
+  .svc-hours-icon-box {
     @apply w-12 h-12 rounded-full bg-brand-yellow/20 flex items-center justify-center shrink-0;
   }
 
-  .subh-ui-215 {
+  .svc-social-icon-box {
     @apply w-12 h-12 rounded-full bg-brand-steel/10 flex items-center justify-center shrink-0;
   }
 
-  .subh-ui-216 {
+  .svc-map {
     @apply rounded-2xl overflow-hidden h-64 border border-gray-200;
   }
 
-  .subh-ui-217 {
+  .gallery-badge-wrap {
     @apply absolute -top-3 left-6;
   }
 
-  .subh-ui-218 {
+  .gallery-badge {
     @apply flex items-center gap-1 px-4 py-1 bg-brand-yellow text-brand-black text-xs font-bold rounded-full;
   }
 
-  .subh-ui-219 {
+  .gallery-budget {
     @apply text-5xl font-bold text-brand-yellow font-[family-name:var(--font-heading)];
   }
 
-  .subh-ui-220 {
+  .gallery-features {
     @apply space-y-2 mb-6;
   }
 
-  .subh-ui-221 {
+  .gallery-enquiry-box {
     @apply mt-12 p-6 rounded-xl bg-white border border-gray-200 text-center shadow-sm;
   }
 
-  .subh-ui-222 {
+  .gallery-enquiry-text {
     @apply text-gray-600 text-sm font-medium;
   }
 
-  .subh-ui-223 {
+  .gallery-hero-bg {
     @apply absolute inset-0 opacity-10;
   }
 
-  .subh-ui-224 {
+  .gallery-hero-overlay {
     @apply absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black;
   }
 
-  .subh-ui-225 {
+  .gallery-filter-bar {
     @apply flex flex-wrap justify-center gap-3 mb-14;
   }
 
-  .subh-ui-226 {
+  .gallery-grid {
     @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8;
   }
 
-  .subh-ui-227 {
+  .gallery-loading-wrap {
     @apply col-span-full flex justify-center py-20;
   }
 
-  .subh-ui-228 {
+  .gallery-spinner {
     @apply w-10 h-10 border-4 border-brand-yellow border-t-transparent rounded-full animate-spin;
   }
 
-  .subh-ui-229 {
+  .gallery-empty {
     @apply col-span-full text-center py-20 font-bold text-gray-500;
   }
 
-  .subh-ui-230 {
+  .gallery-card {
     @apply rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-brand-yellow transition-all duration-300 shadow-md;
   }
 
-  .subh-ui-231 {
+  .gallery-card-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent;
   }
 
-  .subh-ui-232 {
+  .gallery-card-title {
     @apply text-lg font-bold text-brand-black dark:text-white font-[family-name:var(--font-heading)] mb-2;
   }
 
-  .subh-ui-233 {
+  .gallery-card-desc {
     @apply text-gray-700 dark:text-gray-300 font-medium text-sm leading-relaxed mb-4;
   }
 
-  .subh-ui-234 {
+  .gallery-card-meta {
     @apply flex items-center gap-4 text-gray-600 dark:text-gray-400 font-bold text-sm;
   }
 
-  .subh-ui-235 {
+  .gallery-detail-content {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24;
   }
 
-  .subh-ui-236 {
+  .gallery-detail-heading {
     @apply text-3xl font-bold font-[family-name:var(--font-heading)] mb-4;
   }
 
-  .subh-ui-237 {
+  .gallery-detail-feature {
     @apply flex items-center gap-3 text-gray-700 dark:text-gray-300 font-semibold text-sm;
   }
 
-  .subh-ui-238 {
+  .gallery-back-btn {
     @apply inline-flex items-center gap-2 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-brand-black dark:text-white px-6 py-3 rounded-full font-bold hover:bg-white dark:bg-brand-black transition-all hover:scale-105;
   }
 
-  .subh-ui-239 {
+  .gallery-detail-img-wrap {
     @apply relative rounded-2xl overflow-hidden h-[400px];
   }
 
-  .subh-ui-240 {
+  .gallery-detail-img-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-black/30 to-transparent;
   }
 }

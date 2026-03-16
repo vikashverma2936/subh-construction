@@ -38,24 +38,24 @@ export default function Navbar() {
           : 'bg-brand-blue'
       }`}
     >
-      <div className="subh-ui-22">
-        <div className="subh-ui-23">
+      <div className="container">
+        <div className="navbar-inner">
           {/* Logo */}
-          <Link href="/" className="subh-ui-5">
+          <Link href="/" className="footer-brand">
             <Image src="/images/logo.png" alt="SUBH Construction Logo" width={45} height={45} className="rounded" />
             <div>
-              <span className="subh-ui-24">SUBH</span>
-              <span className="subh-ui-25">Construction</span>
+              <span className="navbar-brand-name">SUBH</span>
+              <span className="navbar-brand-suffix">Construction</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="subh-ui-26">
+          <div className="navbar-links">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="subh-ui-27"
+                className="navbar-link"
               >
                 {link.label}
               </Link>
@@ -63,17 +63,17 @@ export default function Navbar() {
           </div>
 
           {/* Actions */}
-          <div className="subh-ui-28">
+          <div className="navbar-actions">
             <button
               onClick={toggleTheme}
-              className="subh-ui-29"
+              className="navbar-theme-toggle"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <Link
               href="/contact"
-              className="subh-ui-30"
+              className="navbar-cta-btn"
             >
               <Phone size={16} />
               Get Free Quote
@@ -81,17 +81,17 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="subh-ui-31">
+          <div className="navbar-mobile-actions">
             <button
               onClick={toggleTheme}
-              className="subh-ui-29"
+              className="navbar-theme-toggle"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="subh-ui-32"
+              className="navbar-mobile-hamburger"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -107,9 +107,9 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="subh-ui-33"
+            className="navbar-mobile-menu"
           >
-            <div className="subh-ui-34">
+            <div className="navbar-mobile-links">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -120,7 +120,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="subh-ui-35"
+                    className="navbar-mobile-link"
                   >
                     {link.label}
                   </Link>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="subh-ui-36"
+                  className="navbar-mobile-cta-btn"
                 >
                   <Phone size={16} />
                   Get Free Quote

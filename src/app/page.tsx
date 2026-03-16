@@ -10,25 +10,25 @@ import { useState } from 'react';
 /* ─── Hero ─── */
 function Hero() {
   return (
-    <section className="subh-ui-140">
+    <section className="hero-section">
       <Image src="/images/hero.png" alt="High-quality residential and commercial construction site" fill sizes="100vw" className="object-cover" priority />
-      <div className="subh-ui-141" />
-      <div className="subh-ui-142">
+      <div className="hero-overlay" />
+      <div className="hero-content">
         <div className="max-w-3xl">
-          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="subh-ui-44">
+          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="about-hero-badge">
             🏗️ Leading Civil Contractor in India
           </motion.span>
-          <motion.h1 initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.5 }} className="subh-ui-143">
+          <motion.h1 initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.5 }} className="hero-heading">
             Trusted Construction Company in <span className="text-brand-yellow">Lucknow</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="subh-ui-144">
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="hero-subtext">
             We build modern homes, commercial buildings, and renovation projects using high-quality materials and expert engineering.
           </motion.p>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="subh-ui-145">
-            <Link href="/contact" className="subh-ui-146">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="hero-cta-group">
+            <Link href="/contact" className="hero-primary-btn">
               Get Free Quote <ArrowRight size={20} />
             </Link>
-            <a href="tel:+919876543210" className="subh-ui-147">
+            <a href="tel:+919876543210" className="hero-secondary-btn">
               <Phone size={20} /> Call Now
             </a>
           </motion.div>
@@ -42,36 +42,36 @@ function Hero() {
 /* ─── Introduction ─── */
 function Introduction() {
   return (
-    <section className="subh-ui-53">
-      <div className="subh-ui-22">
-        <div className="subh-ui-54">
+    <section className="intro-section">
+      <div className="container">
+        <div className="intro-grid">
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <span className="subh-ui-148">About Company</span>
-            <h2 className="subh-ui-149">
+            <span className="intro-badge">About Company</span>
+            <h2 className="intro-heading">
               About <span className="text-brand-yellow-dark">SUBH Construction</span>
             </h2>
-            <p className="subh-ui-150">
+            <p className="intro-desc">
               SUBH Construction is a trusted construction company based in Lucknow, Uttar Pradesh. We specialize in residential homes, commercial buildings, renovation projects, and turnkey construction services. Our mission is to deliver durable, high-quality construction with transparency, modern engineering, and on-time project completion.
             </p>
-            <div className="subh-ui-151">
+            <div className="intro-features-grid">
               {[{ icon: Users, label: 'Experienced Engineers' }, { icon: HardHat, label: 'Skilled Workforce' }, { icon: Shield, label: 'Quality Building Materials' }, { icon: Award, label: 'Modern Techniques' }].map((item) => (
-                <div key={item.label} className="subh-ui-152">
-                  <item.icon size={20} className="subh-ui-74" />
+                <div key={item.label} className="intro-feature-item">
+                  <item.icon size={20} className="achievement-icon" />
                   <span className="text-sm">{item.label}</span>
                 </div>
               ))}
             </div>
-            <Link href="/about" className="subh-ui-153">
+            <Link href="/about" className="intro-learn-more">
               Learn More About Us <ArrowRight size={18} />
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
-            <div className="subh-ui-154">
-              <Image src="/images/engineers.png" alt="SUBH Construction engineers reviewing blueprints" width={600} height={500} style={{ width: '100%', height: 'auto' }} className="subh-ui-155" />
+            <div className="intro-img-wrap">
+              <Image src="/images/engineers.png" alt="SUBH Construction engineers reviewing blueprints" width={600} height={500} style={{ width: '100%', height: 'auto' }} className="intro-img" />
             </div>
-            <div className="subh-ui-156">
-              <p className="subh-ui-157">15+</p>
-              <p className="subh-ui-158">Years Experience</p>
+            <div className="intro-exp-badge">
+              <p className="intro-exp-number">15+</p>
+              <p className="intro-exp-label">Years Experience</p>
             </div>
           </motion.div>
         </div>
@@ -92,18 +92,18 @@ const servicesData = [
 
 function ServicesSection() {
   return (
-    <section className="subh-ui-64">
-      <div className="subh-ui-22">
+    <section className="team-section">
+      <div className="container">
         <SectionHeader badge="Our Services" title="Our Construction" highlight="Services" description="Comprehensive construction and civil contractor services tailored to your needs in Lucknow." />
-        <div className="subh-ui-159">
+        <div className="services-grid">
           {servicesData.map((service, i) => (
-            <motion.div key={service.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group subh-ui-160">
-              <div className="group subh-ui-161">
+            <motion.div key={service.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group service-card">
+              <div className="group service-icon-box">
                 <service.icon size={28} className="text-brand-yellow" />
               </div>
-              <h3 className="subh-ui-162">{service.title}</h3>
-              <p className="subh-ui-163">{service.desc}</p>
-              <Link href="/services" className="subh-ui-164">
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-desc">{service.desc}</p>
+              <Link href="/services" className="service-link">
                 Learn More <ArrowRight size={14} />
               </Link>
             </motion.div>
@@ -124,27 +124,27 @@ const projectsData = [
 
 function FeaturedProjects() {
   return (
-    <section className="subh-ui-165">
-      <div className="subh-ui-22">
+    <section className="projects-section">
+      <div className="container">
         <SectionHeader badge="Our Work" title="Project" highlight="Gallery" description="Explore our latest completed projects and ongoing construction work." dark={false} />
-        <div className="subh-ui-166">
+        <div className="projects-grid">
           {projectsData.map((project, i) => (
-            <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group subh-ui-167">
-              <div className="subh-ui-168">
-                <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="group subh-ui-68" />
-                <div className="subh-ui-169">
-                  <span className="subh-ui-170">{project.cat}</span>
+            <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group project-card">
+              <div className="project-card-img-wrap">
+                <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="group team-member-photo" />
+                <div className="project-badge-wrap">
+                  <span className="project-badge">{project.cat}</span>
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="subh-ui-171">{project.title}</h3>
-                <p className="subh-ui-172"><MapPin size={12} /> {project.loc}</p>
+                <h3 className="project-card-title">{project.title}</h3>
+                <p className="project-card-location"><MapPin size={12} /> {project.loc}</p>
               </div>
             </motion.div>
           ))}
         </div>
-        <div className="subh-ui-173">
-          <Link href="/projects" className="subh-ui-174">
+        <div className="projects-view-all-wrap">
+          <Link href="/projects" className="projects-view-all-btn">
             View All Projects <ArrowRight size={18} />
           </Link>
         </div>
@@ -162,13 +162,13 @@ const statsData = [
 
 function TrustElements() {
   return (
-    <section className="subh-ui-175">
-      <div className="subh-ui-22">
-        <div className="subh-ui-176">
+    <section className="stats-section">
+      <div className="container">
+        <div className="stats-grid">
           {statsData.map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-              <p className="subh-ui-177">{s.n}</p>
-              <p className="subh-ui-178">{s.l}</p>
+              <p className="stat-number">{s.n}</p>
+              <p className="stat-label">{s.l}</p>
             </motion.div>
           ))}
         </div>
@@ -186,18 +186,18 @@ function WhyChooseUs() {
     { icon: Clock, title: 'On-Time Delivery', desc: 'We follow strict timelines and project management to ensure completion on schedule.' },
   ];
   return (
-    <section className="subh-ui-179">
-      <div className="subh-ui-22">
+    <section className="why-section">
+      <div className="container">
         <SectionHeader badge="Why Us" title="Why Choose" highlight="SUBH Construction" description="Top reasons why clients trust us for their house construction and building needs." light />
-        <div className="subh-ui-166">
+        <div className="projects-grid">
           {reasons.map((r, i) => (
-            <motion.div key={r.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="subh-ui-180">
-              <div className="subh-ui-181">
+            <motion.div key={r.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="why-card">
+              <div className="why-icon-box">
                 <r.icon size={26} className="text-brand-yellow" />
               </div>
               <div>
-                <h3 className="subh-ui-182">{r.title}</h3>
-                <p className="subh-ui-8">{r.desc}</p>
+                <h3 className="why-card-title">{r.title}</h3>
+                <p className="footer-desc">{r.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -217,22 +217,22 @@ const pricingData = [
 
 function PricingPreview() {
   return (
-    <section className="subh-ui-58">
-      <div className="subh-ui-22">
+    <section className="mission-section">
+      <div className="container">
         <SectionHeader badge="Pricing" title="Construction" highlight="Cost" description="Affordable and transparent pricing for every budget. View our construction packages." />
-        <div className="subh-ui-166">
+        <div className="projects-grid">
           {pricingData.map((pkg, i) => (
             <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all duration-300 ${pkg.popular ? 'bg-white dark:bg-brand-black border-brand-yellow shadow-xl scale-105 z-10' : 'bg-white dark:bg-brand-black border-gray-200 dark:border-white/10 hover:border-brand-yellow/50'}`}>
-              {pkg.popular && <span className="subh-ui-183">Most Popular</span>}
-              <h3 className="subh-ui-184">{pkg.name}</h3>
-              <div className="subh-ui-185">
-                <span className="subh-ui-51">{pkg.price}</span>
-                <span className="subh-ui-186">{pkg.unit}</span>
+              {pkg.popular && <span className="pricing-popular-tag">Most Popular</span>}
+              <h3 className="pricing-plan-name">{pkg.name}</h3>
+              <div className="pricing-price-wrap">
+                <span className="about-stat-value">{pkg.price}</span>
+                <span className="pricing-plan-desc">{pkg.unit}</span>
               </div>
-              <ul className="subh-ui-187">
+              <ul className="pricing-features">
                 {pkg.features.map((f) => (
-                  <li key={f} className="subh-ui-188">
-                    <CheckCircle2 size={16} className="subh-ui-74" /> {f}
+                  <li key={f} className="pricing-feature-item">
+                    <CheckCircle2 size={16} className="achievement-icon" /> {f}
                   </li>
                 ))}
               </ul>
@@ -257,21 +257,21 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="subh-ui-165">
-      <div className="subh-ui-22">
+    <section className="projects-section">
+      <div className="container">
         <SectionHeader badge="Testimonials" title="Client" highlight="Reviews" description="See what our happy clients have to say about our construction services." dark={false} />
-        <div className="subh-ui-189">
+        <div className="reviews-grid">
           {testimonials.map((t, i) => (
-            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="subh-ui-190">
-              <div className="subh-ui-191">
+            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="review-card">
+              <div className="review-stars">
                 {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} size={18} className="subh-ui-192" />
+                  <Star key={j} size={18} className="review-star-icon" />
                 ))}
               </div>
-              <p className="subh-ui-193">&ldquo;{t.text}&rdquo;</p>
+              <p className="review-quote">&ldquo;{t.text}&rdquo;</p>
               <div>
-                <p className="subh-ui-194">{t.name}</p>
-                <p className="subh-ui-195">{t.role}</p>
+                <p className="review-author-name">{t.name}</p>
+                <p className="review-author-role">{t.role}</p>
               </div>
             </motion.div>
           ))}
@@ -294,19 +294,19 @@ const faqData = [
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <section className="subh-ui-64">
-      <div className="subh-ui-196">
+    <section className="team-section">
+      <div className="faq-container">
         <SectionHeader badge="FAQ" title="Frequently Asked" highlight="Questions" description="Find answers to common questions about our construction services." light />
         <div className="space-y-4">
           {faqData.map((faq, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="subh-ui-197">
-              <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="subh-ui-198">
-                <span className="subh-ui-199">{faq.q}</span>
-                {openIndex === i ? <ChevronUp size={20} className="subh-ui-74" /> : <ChevronDown size={20} className="subh-ui-200" />}
+            <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="faq-item">
+              <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="faq-toggle-btn">
+                <span className="faq-question">{faq.q}</span>
+                {openIndex === i ? <ChevronUp size={20} className="achievement-icon" /> : <ChevronDown size={20} className="faq-chevron" />}
               </button>
               {openIndex === i && (
-                <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="subh-ui-201">
-                  <p className="subh-ui-63">{faq.a}</p>
+                <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="faq-answer">
+                  <p className="mission-card-text">{faq.a}</p>
                 </motion.div>
               )}
             </motion.div>
@@ -320,26 +320,26 @@ function FAQSection() {
 /* ─── Contact Section ─── */
 function ContactSection() {
   return (
-    <section className="subh-ui-179" id="contact">
-      <div className="subh-ui-22">
+    <section className="why-section" id="contact">
+      <div className="container">
         <SectionHeader badge="Contact Us" title="Get Your" highlight="Free Quote" description="Reach out to us today to discuss your next big construction project in Lucknow." />
-        <div className="subh-ui-122">
+        <div className="contact-content-grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h3 className="subh-ui-202">Send us a message</h3>
+            <h3 className="svc-quote-heading">Send us a message</h3>
             <form className="space-y-6">
-              <div className="subh-ui-203">
+              <div className="svc-quote-grid">
                 <div>
-                  <label className="subh-ui-204">Full Name</label>
-                  <input type="text" className="subh-ui-205" placeholder="John Doe" />
+                  <label className="svc-quote-label">Full Name</label>
+                  <input type="text" className="svc-quote-input" placeholder="John Doe" />
                 </div>
                 <div>
-                  <label className="subh-ui-204">Phone Number</label>
-                  <input type="tel" className="subh-ui-205" placeholder="+91 9876543210" />
+                  <label className="svc-quote-label">Phone Number</label>
+                  <input type="tel" className="svc-quote-input" placeholder="+91 9876543210" />
                 </div>
               </div>
               <div>
-                <label className="subh-ui-204">Project Type</label>
-                <select className="subh-ui-206">
+                <label className="svc-quote-label">Project Type</label>
+                <select className="svc-quote-select">
                   <option value="">Select a project type</option>
                   <option value="residential">Residential Construction</option>
                   <option value="commercial">Commercial Building</option>
@@ -349,48 +349,48 @@ function ContactSection() {
                 </select>
               </div>
               <div>
-                <label className="subh-ui-204">Message</label>
-                <textarea rows={4} className="subh-ui-205" placeholder="Tell us about your project..." />
+                <label className="svc-quote-label">Message</label>
+                <textarea rows={4} className="svc-quote-input" placeholder="Tell us about your project..." />
               </div>
-              <button type="submit" className="subh-ui-207">
+              <button type="submit" className="svc-quote-submit">
                 Get Free Quote
               </button>
             </form>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
-            <div className="subh-ui-208">
-              <h3 className="subh-ui-209">Contact Information</h3>
+            <div className="svc-sidebar">
+              <h3 className="svc-sidebar-heading">Contact Information</h3>
               <ul className="space-y-6">
-                <li className="subh-ui-210">
-                  <div className="subh-ui-211">
+                <li className="svc-contact-row">
+                  <div className="svc-contact-icon-box">
                     <Phone className="text-brand-blue" size={20} />
                   </div>
                   <div>
-                    <p className="subh-ui-212">Phone Number</p>
-                    <p className="subh-ui-213">+91 98765 43210</p>
+                    <p className="svc-contact-label">Phone Number</p>
+                    <p className="svc-contact-value">+91 98765 43210</p>
                   </div>
                 </li>
-                <li className="subh-ui-210">
-                  <div className="subh-ui-214">
+                <li className="svc-contact-row">
+                  <div className="svc-hours-icon-box">
                     <MessageCircle className="text-brand-yellow-dark" size={20} />
                   </div>
                   <div>
-                    <p className="subh-ui-212">Email Address</p>
-                    <p className="subh-ui-213">info@subhconstruction.com</p>
+                    <p className="svc-contact-label">Email Address</p>
+                    <p className="svc-contact-value">info@subhconstruction.com</p>
                   </div>
                 </li>
-                <li className="subh-ui-210">
-                  <div className="subh-ui-215">
+                <li className="svc-contact-row">
+                  <div className="svc-social-icon-box">
                     <MapPin className="text-brand-steel" size={20} />
                   </div>
                   <div>
-                    <p className="subh-ui-212">Office Location</p>
-                    <p className="subh-ui-213">Lucknow, Uttar Pradesh, India</p>
+                    <p className="svc-contact-label">Office Location</p>
+                    <p className="svc-contact-value">Lucknow, Uttar Pradesh, India</p>
                   </div>
                 </li>
               </ul>
             </div>
-            <div className="subh-ui-216">
+            <div className="svc-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113911.37894389204!2d80.85966465030225!3d26.848596489392187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1709405252875!5m2!1sen!2sin"
                 width="100%"

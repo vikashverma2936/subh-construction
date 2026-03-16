@@ -56,41 +56,41 @@ export default function PricingPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="subh-ui-81">
-        <div className="subh-ui-82">
+      <section className="blog-hero">
+        <div className="blog-hero-inner">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="subh-ui-44">Pricing</span>
-            <h1 className="subh-ui-83">
+            <span className="about-hero-badge">Pricing</span>
+            <h1 className="blog-hero-heading">
               Construction <span className="gradient-text">Rates</span>
             </h1>
-            <p className="subh-ui-114">Transparent pricing with no hidden costs. Choose the package that fits your budget and dream.</p>
+            <p className="contact-hero-subtext">Transparent pricing with no hidden costs. Choose the package that fits your budget and dream.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Packages */}
-      <section className="subh-ui-53">
-        <div className="subh-ui-22">
-          <div className="subh-ui-59">
+      <section className="intro-section">
+        <div className="container">
+          <div className="mission-grid">
             {packages.map((pkg, i) => (
               <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative p-8 rounded-2xl border transition-all ${pkg.popular ? 'bg-gray-100 dark:bg-white/5 text-brand-black dark:text-white shadow-xl scale-105 z-10' : 'bg-white text-brand-black border-gray-200 hover:border-brand-yellow shadow-md'}`}>
                 {pkg.popular && (
-                  <div className="subh-ui-217">
-                    <span className="subh-ui-218"><Star size={12} /> Most Popular</span>
+                  <div className="gallery-badge-wrap">
+                    <span className="gallery-badge"><Star size={12} /> Most Popular</span>
                   </div>
                 )}
                 <h3 className={`text-2xl font-bold font-[family-name:var(--font-heading)] ${pkg.popular ? 'text-brand-black dark:text-white' : 'text-brand-black'}`}>{pkg.name}</h3>
                 <p className={`text-sm mt-2 mb-4 font-medium ${pkg.popular ? 'text-gray-700 dark:text-gray-300' : 'text-gray-600'}`}>{pkg.desc}</p>
                 <div className="mb-6">
-                  <span className="subh-ui-219">{pkg.price}</span>
+                  <span className="gallery-budget">{pkg.price}</span>
                   <span className={pkg.popular ? 'text-gray-700 dark:text-gray-300' : 'text-gray-500'}>{pkg.unit}</span>
                 </div>
 
                 {/* Features */}
-                <ul className="subh-ui-220">
+                <ul className="gallery-features">
                   {pkg.features.map((f) => (
                     <li key={f} className={`flex items-center gap-2 text-sm font-semibold ${pkg.popular ? 'text-gray-200' : 'text-gray-700'}`}>
-                      <CheckCircle2 size={16} className="subh-ui-74" /> {f}
+                      <CheckCircle2 size={16} className="achievement-icon" /> {f}
                     </li>
                   ))}
                 </ul>
@@ -123,8 +123,8 @@ export default function PricingPageClient() {
           </div>
 
           {/* Note */}
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="subh-ui-221">
-            <p className="subh-ui-222">
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="gallery-enquiry-box">
+            <p className="gallery-enquiry-text">
               <span className="font-bold">Note:</span> All prices are indicative and may vary based on location, design complexity, and current material costs. Contact us for a detailed, customized quotation.
             </p>
           </motion.div>
@@ -132,12 +132,12 @@ export default function PricingPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="subh-ui-76">
-        <div className="subh-ui-77">
+      <section className="about-cta-section">
+        <div className="about-cta-inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="subh-ui-78">Ready to Get a Detailed Quote?</h2>
-            <p className="subh-ui-79">Our team will prepare a customized quotation based on your specific requirements.</p>
-            <Link href="/contact" className="subh-ui-80">
+            <h2 className="about-cta-heading">Ready to Get a Detailed Quote?</h2>
+            <p className="about-cta-text">Our team will prepare a customized quotation based on your specific requirements.</p>
+            <Link href="/contact" className="about-cta-btn">
               <Phone size={20} /> Get Free Consultation
             </Link>
           </motion.div>

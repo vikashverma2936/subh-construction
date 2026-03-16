@@ -22,7 +22,7 @@ export default function SectionHeader({ badge, title, highlight, description, ce
       className={`mb-14 ${center ? 'text-center' : ''}`}
     >
       {badge && (
-        <span className="subh-ui-37">
+        <span className="section-badge">
           {badge}
         </span>
       )}

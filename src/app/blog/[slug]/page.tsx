@@ -173,44 +173,44 @@ export default async function BlogPost({ params }: Props) {
 
   if (!blog) {
     return (
-      <div className="subh-ui-99">
+      <div className="blog-not-found">
         <div className="text-center">
-          <h1 className="subh-ui-100">Post Not Found</h1>
-          <Link href="/blog" className="subh-ui-101">← Back to Blog</Link>
+          <h1 className="blog-not-found-heading">Post Not Found</h1>
+          <Link href="/blog" className="blog-not-found-link">← Back to Blog</Link>
         </div>
       </div>
     );
   }
 
   return (
-    <article className="subh-ui-102">
+    <article className="contact-page">
       {/* Hero */}
-      <div className="subh-ui-103">
+      <div className="contact-hero-img-wrap">
         <Image src={blog.img} alt={blog.title} fill className="object-cover" />
-        <div className="subh-ui-104" />
+        <div className="contact-hero-overlay" />
       </div>
 
       {/* Content */}
-      <div className="subh-ui-105">
-        <Link href="/blog" className="subh-ui-106">
+      <div className="contact-form-wrap">
+        <Link href="/blog" className="contact-back-link">
           <ArrowLeft size={16} /> Back to Blog
         </Link>
-        <h1 className="subh-ui-107">{blog.title}</h1>
-        <div className="subh-ui-108">
-          <span className="subh-ui-94"><User size={14} /> SUBH Construction Team</span>
-          <span className="subh-ui-94"><Calendar size={14} /> {blog.date}</span>
-          <span className="subh-ui-94"><Clock size={14} /> {blog.readTime}</span>
+        <h1 className="contact-form-heading">{blog.title}</h1>
+        <div className="contact-form-meta">
+          <span className="blog-featured-meta-item"><User size={14} /> SUBH Construction Team</span>
+          <span className="blog-featured-meta-item"><Calendar size={14} /> {blog.date}</span>
+          <span className="blog-featured-meta-item"><Clock size={14} /> {blog.readTime}</span>
         </div>
         <div
-          className="subh-ui-109 prose prose-invert prose-lg max-w-none prose-headings:font-[family-name:var(--font-heading)] prose-headings:text-brand-yellow prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-strong:text-brand-black dark:text-white prose-a:text-brand-yellow"
+          className="contact-form-meta-item prose prose-invert prose-lg max-w-none prose-headings:font-[family-name:var(--font-heading)] prose-headings:text-brand-yellow prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-strong:text-brand-black dark:text-white prose-a:text-brand-yellow"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
         {/* CTA */}
-        <div className="subh-ui-110">
-          <h3 className="subh-ui-111">Ready to Start Your Construction Project?</h3>
-          <p className="subh-ui-112">Get a free consultation and detailed cost estimate from our expert team.</p>
-          <Link href="/contact" className="subh-ui-113">
+        <div className="contact-cta-box">
+          <h3 className="contact-cta-heading">Ready to Start Your Construction Project?</h3>
+          <p className="contact-cta-text">Get a free consultation and detailed cost estimate from our expert team.</p>
+          <Link href="/contact" className="contact-cta-btn">
             Contact Us Today <ArrowLeft size={16} className="rotate-180" />
           </Link>
         </div>

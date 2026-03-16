@@ -9,10 +9,10 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="subh-ui-38"
+      className="whatsapp-btn"
       style={{ '--tw-shadow-color': 'rgba(34,197,94,0.4)' } as React.CSSProperties}
     >
-      <MessageCircle size={28} className="subh-ui-39" />
+      <MessageCircle size={28} className="theme-root" />
     </a>
   );
 }
