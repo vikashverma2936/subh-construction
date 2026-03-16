@@ -48,7 +48,7 @@ function Introduction() {
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <span className="intro-badge">About Company</span>
             <h2 className="intro-heading">
-              About <span className="text-brand-yellow-dark">SUBH Construction</span>
+              <span className="text-white">About</span> <span className="text-brand-yellow-dark">SUBH Construction</span>
             </h2>
             <p className="intro-desc">
               SUBH Construction is a trusted construction company based in Lucknow, Uttar Pradesh. We specialize in residential homes, commercial buildings, renovation projects, and turnkey construction services. Our mission is to deliver durable, high-quality construction with transparency, modern engineering, and on-time project completion.
@@ -57,11 +57,11 @@ function Introduction() {
               {[{ icon: Users, label: 'Experienced Engineers' }, { icon: HardHat, label: 'Skilled Workforce' }, { icon: Shield, label: 'Quality Building Materials' }, { icon: Award, label: 'Modern Techniques' }].map((item) => (
                 <div key={item.label} className="intro-feature-item">
                   <item.icon size={20} className="achievement-icon" />
-                  <span className="text-sm">{item.label}</span>
+                  <span className="text-sm text-white">{item.label}</span>
                 </div>
               ))}
             </div>
-            <Link href="/about" className="intro-learn-more">
+            <Link href="/about" className="intro-learn-more text-white hover:text-brand-yellow">
               Learn More About Us <ArrowRight size={18} />
             </Link>
           </motion.div>
